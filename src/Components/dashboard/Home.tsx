@@ -4,6 +4,7 @@ import homeImg from "../images/homeImg.png";
 import search from "../images/search.png";
 import download from "../images/download.png";
 import food from "../images/food.png";
+import icon from "../images/ricon.png";
 
 const Home = () => {
   return (
@@ -49,61 +50,116 @@ const Home = () => {
           <img src={homeImg} className="w-[710px] h-[580px]" alt="" />
         </div>
       </div>
-      <div className="w-full h-[600px] bg-[#F9F9F9] relative">
+
+      <div className="w-full h-[650px] bg-[#F9F9F9] relative">
         <div>
-          <p className="popularitem absolute top-[10%] left-[45%] text-center text-[28px]">
+          <p className="popularitem absolute top-[10%] left-[43%] text-center text-[36px]">
             Popular Items
           </p>
         </div>
-        <div className="pt-[200px] pl-[160px] flex flex-wrap gap-[25px]">
-          <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative border-none overflow-hidden">
-            <div className="absolute h-[100px] w-[100px] top-[160px] text-[#fff] bg-[#FCCD23] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
-              <div className="flex mt-[15px] ml-[10px]">
-                <p className="text-[40px]">15</p>
-                <p>
-                  % <p className="text-[18px]">Off</p>
-                </p>
+
+        <div className="pt-[160px] pl-[160px] flex flex-wrap gap-[25px]">
+          <div className="cursor-pointer">
+            <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative border-none overflow-hidden">
+              <div className="absolute h-[100px] w-[100px] top-[160px] text-[#fff] bg-[#FCCD23] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
+                <div className="flex mt-[15px] ml-[10px]">
+                  <p className="text-[36px] font-bold">15</p>
+                  <p>
+                    % <p className="text-[18px]">Off</p>
+                  </p>
+                </div>
               </div>
+              <img
+                src={food}
+                className="h-full w-full object-cover"
+                alt="Food"
+              />
             </div>
-            <img src={food} className="h-full w-full object-cover" alt="Food" />
+            <p className="HomefoodName text-[22px] pl-[35px] pt-[15px]">
+              Pizza
+            </p>
+            <p className="OfferTime w-[180px] h-[35px] bg-[#FFE6D9] text-[#F17228] text-center ml-[30px] mt-[15px] pt-[5px] rounded-[8px] shadow-lg">
+              8 days remaining
+            </p>
           </div>
 
-          <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative border-none overflow-hidden">
-            <div className="absolute h-[100px] w-[100px] top-[160px] text-[#fff] bg-[#FCCD23] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
-              <div className="flex mt-[15px] ml-[10px]">
-                <p className="text-[40px]">15</p>
-                <p>
-                  % <p className="text-[18px]">Off</p>
-                </p>
+          <div className="cursor-pointer">
+            <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative border-none overflow-hidden">
+              <div className="absolute h-[100px] w-[100px] top-[160px] text-[#fff] bg-[#FCCD23] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
+                <div className="flex mt-[15px] ml-[10px]">
+                  <p className="text-[36px] font-bold">20</p>
+                  <p>
+                    % <p className="text-[18px]">Off</p>
+                  </p>
+                </div>
               </div>
+              <img
+                src={food}
+                className="h-full w-full object-cover"
+                alt="Food"
+              />
             </div>
-            <img src={food} className="h-full w-full object-cover" alt="Food" />
+            <p className="HomefoodName text-[22px] pl-[35px] pt-[15px]">
+              Mo Mo
+            </p>
+            <p className="OfferTime w-[180px] h-[35px] bg-[#FFE6D9] text-[#F17228] text-center ml-[30px] mt-[15px] pt-[5px] rounded-[8px] shadow-lg">
+              8 days remaining
+            </p>
           </div>
 
-          <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative border-none overflow-hidden">
-            <div className="absolute h-[100px] w-[100px] top-[160px] text-[#fff] bg-[#FCCD23] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
-              <div className="flex mt-[15px] ml-[10px]">
-                <p className="text-[40px]">15</p>
-                <p>
-                  % <p className="text-[18px]">Off</p>
-                </p>
+          <div className="cursor-pointer">
+            <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative border-none overflow-hidden">
+              <div className="absolute h-[100px] w-[100px] top-[160px] text-[#fff] bg-[#FCCD23] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
+                <div className="flex mt-[15px] ml-[10px]">
+                  <p className="text-[36px] font-bold">10</p>
+                  <p>
+                    % <p className="text-[18px]">Off</p>
+                  </p>
+                </div>
               </div>
+              <img
+                src={food}
+                className="h-full w-full object-cover"
+                alt="Food"
+              />
             </div>
-            <img src={food} className="h-full w-full object-cover" alt="Food" />
+            <p className="HomefoodName text-[22px] pl-[35px] pt-[15px]">
+              Pizza
+            </p>
+            <p className="OfferTime w-[180px] h-[35px] bg-[#FFE6D9] text-[#F17228] text-center ml-[30px] mt-[15px] pt-[5px] rounded-[8px] shadow-lg">
+              8 days remaining
+            </p>
           </div>
 
-          <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative border-none overflow-hidden">
-            <div className="absolute h-[100px] w-[100px] top-[160px] text-[#fff] bg-[#FCCD23] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
-              <div className="flex mt-[15px] ml-[10px]">
-                <p className="text-[40px]">15</p>
-                <p>
-                  % <p className="text-[18px]">Off</p>
-                </p>
+          <div className="cursor-pointer">
+            <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative border-none overflow-hidden">
+              <div className="absolute h-[100px] w-[100px] top-[160px] text-[#fff] bg-[#FCCD23] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
+                <div className="flex mt-[15px] ml-[10px]">
+                  <p className="text-[36px] font-bold">25</p>
+                  <p>
+                    % <p className="text-[18px]">Off</p>
+                  </p>
+                </div>
               </div>
+              <img
+                src={food}
+                className="h-full w-full object-cover"
+                alt="Food"
+              />
             </div>
-            <img src={food} className="h-full w-full object-cover" alt="Food" />
+            <p className="HomefoodName text-[22px] pl-[25px] pt-[15px]">
+              Chowmein
+            </p>
+            <p className="OfferTime w-[180px] h-[30px] bg-[#FFE6D9] text-[#F17228] text-center ml-[30px] mt-[15px] pt-[5px] rounded-[8px] shadow-lg">
+              8 days remaining
+            </p>
           </div>
-          
+        </div>
+        <div className="HomeFoodName flex items-center justify-center mt-[50px]">
+          <button className="w-[180px] h-[40px] text-[18px] text-[#fff] bg-[#FCCD23] rounded-[8px] border-none shadow-2xl">
+            View All
+            <img src={icon} className="h-[13px] w-[13px] pl-[5px] " alt="" />
+          </button>
         </div>
       </div>
     </div>
