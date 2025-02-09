@@ -1,9 +1,10 @@
 import React from "react";
 import Navbar from "./Components/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Components/dashboard/Home";
-import Footer from "./Components/Footer";
+import Login from "./Components/dashboard/Login";
 import HomeNav from "./homeNav";
+import Home from "./Components/dashboard/Home";
+import SearchResults from "./Components/Order&search.tsx/searchResults";
 
 const Router: React.FC = () => {
   return (
@@ -11,8 +12,9 @@ const Router: React.FC = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navbar />} />
-          <Route path="login/" element={<Home />} />
-          <Route path="homeNav/" element={<HomeNav />} />
+          <Route path="login/" element={<Login />} />
+          <Route path="home/" element={<Home />} />
+          <Route path="result/" element={<SearchResults/>} />
         </Routes>
       </BrowserRouter>
     </div>
