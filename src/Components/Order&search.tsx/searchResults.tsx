@@ -7,14 +7,62 @@ import Footer from "../Footer";
 
 const SearchResults: React.FC = () => {
   const results = [
-    { name: "Vera pizza", resName: "Pasa Voj", Location: "Durbarmarg", img: food, rating: 4.5 },
-    { name: "Pizza", resName: "Pasa Voj", Location: "Banepa-7", img: food, rating: 4.0 },
-    { name: "Pizza", resName: "Pasa Voj", Location: "Durbarmarg", img: food, rating: 3.8 },
-    { name: "Pizza", resName: "Pasa Voj", Location: "Durbarmarg", img: food, rating: 5.0 },
-    { name: "Pizza", resName: "VIP Thakali", Location: "Banepa buspark, Banepa", img: food, rating: 4.2 },
-    { name: "Pizza", resName: "VIP Thakali", Location: "Banepa buspark, Banepa", img: food, rating: 3.5 },
-    { name: "Pizza", resName: "VIP Thakali", Location: "Banepa buspark, Banepa", img: food, rating: 4.7 },
-    { name: "Pizza", resName: "VIP Thakali", Location: "Banepa buspark, Banepa", img: food, rating: 4.1 },
+    {
+      name: "Vera pizza",
+      resName: "Pasa Voj",
+      Location: "Durbarmarg",
+      img: food,
+      rating: 4.5,
+    },
+    {
+      name: "Pizza",
+      resName: "Pasa Voj",
+      Location: "Banepa-7",
+      img: food,
+      rating: 4.0,
+    },
+    {
+      name: "Pizza",
+      resName: "Pasa Voj",
+      Location: "Durbarmarg",
+      img: food,
+      rating: 3.8,
+    },
+    {
+      name: "Pizza",
+      resName: "Pasa Voj",
+      Location: "Durbarmarg",
+      img: food,
+      rating: 5.0,
+    },
+    {
+      name: "Pizza",
+      resName: "VIP Thakali",
+      Location: "Banepa buspark, Banepa",
+      img: food,
+      rating: 4.2,
+    },
+    {
+      name: "Pizza",
+      resName: "VIP Thakali",
+      Location: "Banepa buspark, Banepa",
+      img: food,
+      rating: 3.5,
+    },
+    {
+      name: "Pizza",
+      resName: "VIP Thakali",
+      Location: "Banepa buspark, Banepa",
+      img: food,
+      rating: 4.7,
+    },
+    {
+      name: "Pizza",
+      resName: "VIP Thakali",
+      Location: "Banepa buspark, Banepa",
+      img: food,
+      rating: 4.1,
+    },
   ];
 
   // Helper function to generate stars based on rating
@@ -65,7 +113,6 @@ const SearchResults: React.FC = () => {
           {results.map((result, index) => (
             <div key={index} className="cursor-pointer">
               <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative overflow-hidden">
-                
                 {(index + 1) % 2 === 0 && (
                   <div className="absolute h-[70px] w-[100px] top-[180px] text-[#fff] bg-[#D1A815] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
                     <div className="flex mt-[10px] ml-[10px]">
@@ -82,25 +129,28 @@ const SearchResults: React.FC = () => {
                   alt={result.name}
                 />
               </div>
-
-              <p className="HomefoodName font-bold text-[18px] pt-[15px] text-center">
-                {result.name} - {result.resName}
-              </p>
-              <div className="pt-[10px] flex gap-[10px] justify-center items-center">
-                <img
-                  src={location}
-                  className="h-[18px] w-[18px]"
-                  alt="Location Icon"
-                />
-                <p className="HomefoodName font-bold text-[14px]">
-                  {result.Location}
+              <div className="ml-[20px]">
+                <p className="HomefoodName font-bold text-[18px] pt-[15px]">
+                  {result.name} - {result.resName}
                 </p>
-              </div>
+                <div className="pt-[10px] flex gap-[10px]">
+                  <img
+                    src={location}
+                    className="h-[18px] w-[18px]"
+                    alt="Location Icon"
+                  />
+                  <p className="HomefoodName font-bold text-[14px]">
+                    {result.Location}
+                  </p>
+                </div>
 
-              {/* Rating */}
-              <div className="flex justify-center  text-[#CA5F1A] text-[28px]">
-                {renderStars(result.rating)}
-                <span className="ml-[5px] text-[#473F40] pt-[15px] text-[14px]">({result.rating})</span>
+                {/* Rating */}
+                <div className="flex text-[#CA5F1A] text-[28px]">
+                  {renderStars(result.rating)}
+                  <span className="ml-[5px] text-[#473F40] pt-[15px] text-[14px]">
+                    ({result.rating})
+                  </span>
+                </div>
               </div>
             </div>
           ))}

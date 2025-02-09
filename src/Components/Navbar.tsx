@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import logo from "./images/logo.png";
 import "./navbar.css";
-
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const [activeItem, setActiveItem] = useState<string>("Dashboard");
-
+  const navigate = useNavigate();
   const menuItems = [
     { name: "Dashboard", path: "/home" },
     { name: "Orders", path: "/order" },
@@ -37,7 +37,7 @@ const Navbar = () => {
           <button className="AddRes h-[40px] w-[150px] text-[#473F40] text-[16px] font-bold bg-[#FFFFFF] border-none cursor-pointer">
             Add Restaurant
           </button>
-          <button className="h-[40px] w-[120px] bg-[#581818] text-[14px] text-[#fff] border-none cursor-pointer">
+          <button className="h-[40px] w-[120px] bg-[#581818] text-[14px] text-[#fff] border-none cursor-pointer" onClick={() => navigate("home/")}>
             Login
           </button>
         </div>

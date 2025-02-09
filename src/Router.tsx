@@ -12,7 +12,7 @@ const Router: React.FC = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navbar />} />
-          <Route path="login/" element={<Login />} />
+          <Route path="login" element={<Login />} />
           <Route path="home/" element={<Home />} />
           <Route path="result/" element={<SearchResults/>} />
         </Routes>

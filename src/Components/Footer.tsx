@@ -29,7 +29,7 @@ const Footer = () => {
             alt=""
           />
         </div>
-        <div className="pt-[10px] text-[18px] text-[#fff] ml-[740px] flex flex-wrap">
+        <div className="mt-[-15px] text-[18px] text-[#fff] ml-[740px] flex flex-wrap">
           <p>View All Cities</p>
         </div>
         <div className="h-[1px] w-[1350px] bg-[#fff] ml-[80px] mt-[60px]"></div>
