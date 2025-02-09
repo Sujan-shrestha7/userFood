@@ -3,15 +3,16 @@ import Navbar from "./Components/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/dashboard/Home";
 import Footer from "./Components/Footer";
+import HomeNav from "./homeNav";
 
-const Router = () => {
+const Router: React.FC = () => {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navbar />}></Route>
-          <Route path="home/" element={<Home />}></Route>
-          <Route path="footer/" element={<Footer />}></Route>
+          <Route path="/" element={<Navbar />} />
+          <Route path="login/" element={<Home />} />
+          <Route path="homeNav/" element={<HomeNav />} />
         </Routes>
       </BrowserRouter>
     </div>
