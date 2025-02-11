@@ -1,11 +1,13 @@
 import React from "react";
-import HomeNav from "../../homeNav";
+import HomeNav from "../homeNav";
 import search from "../images/search.png";
 import food from "../images/food.png";
 import location from "../images/location.png";
 import Footer from "../Footer";
+import { useNavigate } from "react-router-dom";
 
 const SearchResults: React.FC = () => {
+  const navigate = useNavigate();
   const results = [
     {
       name: "Vera pizza",
@@ -111,8 +113,8 @@ const SearchResults: React.FC = () => {
         {/* Search Results */}
         <div className="pt-[70px] pl-[160px] flex flex-wrap gap-x-[25px] gap-y-[50px] ">
           {results.map((result, index) => (
-            <div key={index} className="cursor-pointer">
-              <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative overflow-hidden">
+            <div key={index} className="cursor-pointer" >
+              <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative overflow-hidden" onClick={() => navigate("/restaurantFoods")}>
                 {(index + 1) % 2 === 0 && (
                   <div className="absolute h-[70px] w-[100px] top-[180px] text-[#fff] bg-[#D1A815] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
                     <div className="flex mt-[10px] ml-[10px]">
@@ -129,11 +131,11 @@ const SearchResults: React.FC = () => {
                   alt={result.name}
                 />
               </div>
-              <div className="ml-[20px]">
+              <div className="ml-[10px]">
                 <p className="HomefoodName font-bold text-[18px] pt-[15px]">
                   {result.name} - {result.resName}
                 </p>
-                <div className="pt-[10px] flex gap-[10px]">
+                <div className="pt-[10px] w-full flex gap-[10px]">
                   <img
                     src={location}
                     className="h-[18px] w-[18px]"
@@ -142,6 +144,7 @@ const SearchResults: React.FC = () => {
                   <p className="HomefoodName font-bold text-[14px]">
                     {result.Location}
                   </p>
+                  <button className="text-center cursor-pointer w-[90px] h-[25px] rounded-[5px] mt-[-3px]">Add To Cart</button>
                 </div>
 
                 {/* Rating */}

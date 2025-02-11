@@ -13,10 +13,13 @@ import mblApp from "../images/mblApp.png";
 import backMblApp from "../images/backmblApp.png";
 import discount from "../images/discount.png";
 import Footer from "../Footer";
-import HomeNav from "../../homeNav";
+import HomeNav from "../homeNav";
+import SearchResults from "../Order&search.tsx/searchResults";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   
+    const navigate = useNavigate();
   const results = [
     { name: 'Vera pizza', remaining: '8 days remaining' },
     { name: ' Chicken Pizza', remaining: '8 days remaining' },
@@ -77,7 +80,7 @@ const Home = () => {
         </div>
 
         <div className="h-[2px] w-[90%] ml-[5%] mt-[30px] rounded-[10px] bg-[#FFFFFF] shadow-lg" />
-        <div className="pt-[160px] pl-[160px] flex flex-wrap gap-[25px]">
+        <div className="pt-[160px] pl-[160px] flex flex-wrap gap-[25px]" onClick={() => navigate("result/")}>
           {results.map((result, index) => (
             <div key={index} className="cursor-pointer">
               <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative overflow-hidden">

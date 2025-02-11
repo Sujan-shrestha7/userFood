@@ -44,3 +44,10 @@
 .AboutDes{
     font-family: 'righteous',sans-serif;
 }
+
+
+/* restaurant view */
+
+.restaurantName{
+    font-weight: bolder;
+}

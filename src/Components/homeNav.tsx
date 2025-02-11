@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import logo from "./Components/images/logo.png";
-import './Components/Navbar.css';
-import cart from './Components/images/cart.png';
-import notification from './Components/images/notification.png';
-import profile from './Components/images/profile.png';
+import logo from "./images/logo.png";
+import './Navbar.css';
+import cart from './images/cart.png';
+import notification from './images/notification.png';
+import profile from './images/profile.png';
+import { useNavigate } from "react-router-dom";
 
 interface MenuItem {
   name: string;
@@ -12,7 +13,7 @@ interface MenuItem {
 
 const HomeNav: React.FC = () => {
   const [activeItem, setActiveItem] = useState<string>("Dashboard");
-
+    const navigate = useNavigate();
   const menuItems: MenuItem[] = [
     { name: "Dashboard", path: "/home" },
     { name: "Orders", path: "/order" },
@@ -32,8 +33,8 @@ const HomeNav: React.FC = () => {
     <div className="sticky top-0 left-0 right-0 z-50 h-[60px] pt-[5px] w-full bg-[#FFFFFF] shadow-md">
       <div className="flex ml-[100px] gap-[100px] items-center">
         
-        {/* Logo Section */}
-        <div className="flex items-center w-[400px]">
+        {/* Logo Section */} 
+        <div className="flex items-center w-[400px] cursor-pointer" onClick={() => navigate("/home")}>
           <img src={logo} alt="Logo" className="h-[50px] w-[50px]" />
           <p className="xittoofood text-[32px] pl-[12px]">XittooFood</p>
         </div>
@@ -51,7 +52,7 @@ const HomeNav: React.FC = () => {
 
           {/* Cart Icon */}
           <div className="rounded-full h-[40px] w-[40px] bg-[#D9D9D9] cursor-pointer flex items-center justify-center">
-            <img src={cart} className="h-[25px] w-[25px]" alt="Cart" />
+            <img src={cart} className="h-[25px] w-[35px]" alt="Cart" />
           </div>
 
           {/* Notification Icon */}
