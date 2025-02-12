@@ -51,7 +51,7 @@ const HomeNav: React.FC = () => {
           </button>
 
           {/* Cart Icon */}
-          <div className="rounded-full h-[40px] w-[40px] bg-[#D9D9D9] cursor-pointer flex items-center justify-center">
+          <div className="rounded-full h-[40px] w-[40px] bg-[#D9D9D9] cursor-pointer flex items-center justify-center" onClick={()=>navigate("/cart")}>
             <img src={cart} className="h-[25px] w-[35px]" alt="Cart" />
           </div>
 

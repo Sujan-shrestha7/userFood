@@ -42,7 +42,7 @@ const Menu: React.FC = () => {
   const myCart = [
     { qty: 3, food: "MoMo", price: 190, Discount: 100 },
     { qty: 2, food: "Pizza", price: 210, Discount: 0 },
-    { qty: 3, food: "momo", price: 290, Discount: 0 },
+    { qty: 3, food: "Chowmein", price: 290, Discount: 0 },
   ];
 
   const TotalAmount = myCart.reduce((sum, item) => {
@@ -50,7 +50,8 @@ const Menu: React.FC = () => {
   }, 0);
 
   const VAT = (TotalAmount * 0.13).toFixed(2);
-  const GrandTotal = parseInt(VAT) + TotalAmount;
+  const DeliveryCharge = 150;
+  const GrandTotal = parseInt(VAT) + TotalAmount + DeliveryCharge;
 
   const restaurant = [
     {
@@ -62,7 +63,7 @@ const Menu: React.FC = () => {
   ];
 
   return (
-    <div className="mt-[50px]">
+    <div className="mt-[50px] ml-[-20px]">
       <div className="flex flex-wrap gap-[100px]">
         <div className="ml-[-100px]">
           <p className="foodstyle mb-[30px]">Popular Items</p>
@@ -112,21 +113,21 @@ const Menu: React.FC = () => {
           <div className="text-[16px] w-[600px] ml-[-30px] mt-[40px]">
             {food.map((rest, index) => (
               <div>
-              <div className="flex mb-[20px] mt-[20px] justify-between">
-                <p>{rest.name}</p>
-                <div className="flex gap-[20px]">
-                  <p>Rs.{rest.Price}/- </p>
-                  <button className="flex cursor-pointer pt-[8px] mt-[-8px] text-[14px] h-[32px] w-[110px] bg-[#137F13] text-[#fff] text-center rounded-[5px] border-none">
-                    <img
-                      src={cart}
-                      className="w-[22px] h-[13px] mt-[px]"
-                      alt=""
-                    />
-                    <p className="mt-[]">Add To Cart </p>
-                  </button>
+                <div className="flex mb-[20px] mt-[20px] justify-between">
+                  <p>{rest.name}</p>
+                  <div className="flex gap-[20px]">
+                    <p>Rs.{rest.Price}/- </p>
+                    <button className="flex cursor-pointer pt-[8px] mt-[-8px] text-[14px] h-[32px] w-[110px] bg-[#137F13] text-[#fff] text-center rounded-[5px] border-none">
+                      <img
+                        src={cart}
+                        className="w-[22px] h-[13px] mt-[px]"
+                        alt=""
+                      />
+                      <p className="mt-[]">Add To Cart </p>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div className="w-[100%] mt-[-15px] h-[1px] bg-[#fff]" />
+                <div className="w-[100%] mt-[-15px] h-[1px] bg-[#fff]" />
               </div>
             ))}
           </div>
@@ -139,23 +140,19 @@ const Menu: React.FC = () => {
             </p>
             {menus.map((rest, index) => (
               <div>
-              <div className="flex mb-[10px] mt-[25px] w-[550px] text-[#363636] justify-between">
-                <p>{rest.name}</p>
-                <div className="flex gap-[20px]">
-                  <p>Rs.{rest.Price}/- </p>
-                  <button className="flex cursor-pointer pt-[8px] mt-[-8px] text-[14px] h-[32px] w-[110px] bg-[#137F13] text-[#fff] text-center rounded-[5px] border-none">
-                    <img
-                      src={cart}
-                      className="w-[22px] h-[13px]"
-                      alt=""
-                    />
-                    <p className="mt-[]">Add To Cart </p>
-                  </button>
+                <div className="flex mb-[10px] mt-[25px] w-[550px] text-[#363636] justify-between">
+                  <p>{rest.name}</p>
+                  <div className="flex gap-[20px]">
+                    <p>Rs.{rest.Price}/- </p>
+                    <button className="flex cursor-pointer pt-[8px] mt-[-8px] text-[14px] h-[32px] w-[110px] bg-[#137F13] text-[#fff] text-center rounded-[5px] border-none">
+                      <img src={cart} className="w-[22px] h-[13px]" alt="" />
+                      <p className="mt-[]">Add To Cart </p>
+                    </button>
+                  </div>
                 </div>
+
+                <div className="w-[110%] mt-[-5px] h-[1px] bg-[#fff]" />
               </div>
-              
-              <div className="w-[110%] mt-[-5px] h-[1px] bg-[#fff]" />
-              </ div>
             ))}
           </div>
         </div>
@@ -163,43 +160,42 @@ const Menu: React.FC = () => {
         {/* divider line  */}
         <div className=" h-auto ml-[-80px] w-[2px] bg-[#fff]" />
 
+        {/* cart  */}
         <div className="ml-[-20px]">
           <p className="foodstyle text-center ">My Cart</p>
           <div className="flex justify-between mt-[50px] w-[250px] mb-[30px]">
             <p>Foods</p>
             <p>Total</p>
           </div>
-          <div className="ml-[]">
+          <div className=" w-[300px]">
             {myCart.map((item, index) => (
-              <div className="">
-                <div className="ml-[-0px] mt-[10px] flex gap-[150px]">
+                <div className="ml-[-0px] mt-[10px] flex justify-between">
                   <div className="flex  justify-between text-[#504C4C] text-[16px] gap-[25px]">
                     <p className="ml-[-30px]">{item.qty}x</p>
-                    <p>{item.food}</p>
+                    <p>{item.food}  ({item.price})</p>
                   </div>
-                  <p className="w-[60px] ml-[-10px] text-right text-[14px]">
+                  <p className="mr-[45px] text-right text-[14px]">
                     Rs. {item.price * item.qty}/-
                   </p>
                 </div>
-              </div>
             ))}
-            <div className="ml-[15px] text-[#888383] text-[14px]">
-              <div className=" mt-[20px] flex gap-[170px] text-[#504C4C] ">
-                <p> Sub Total </p>
-                <p className=" ml-[-45px]">Rs. {TotalAmount}/-</p>
-              </div>
-              <div className=" mt-[10px] flex gap-[170px] text-[#504C4C] ">
-                <p className=""> VAT </p>
-                <p className=" ml-[-12px]">Rs. {VAT}/-</p>
-              </div>
-              <div className=" mt-[10px] flex gap-[170px] text-[#504C4C]">
-                <p> Service Charge </p>
-                <p className=" ml-[-83px]">Rs. 0/-</p>
-              </div>
-              <div className="mt-[10px] flex gap-[140px] text-[#504C4C]">
-                <p> Delivery Charge </p>
-                <p className=" ml-[-57px]">Rs. 100/-</p>
-              </div>
+          </div>
+          <div className="ml-[15px] text-[#888383] text-[14px]">
+            <div className=" mt-[20px] flex gap-[170px] text-[#504C4C] ">
+              <p> Sub Total </p>
+              <p className=" ml-[-45px]">Rs. {TotalAmount}/-</p>
+            </div>
+            <div className=" mt-[10px] flex gap-[170px] text-[#504C4C] ">
+              <p className=""> VAT </p>
+              <p className=" ml-[-12px]">Rs. {VAT}/-</p>
+            </div>
+            <div className=" mt-[10px] flex gap-[170px] text-[#504C4C]">
+              <p> Service Charge </p>
+              <p className=" ml-[-83px]">Rs. 0/-</p>
+            </div>
+            <div className="mt-[10px] flex gap-[140px] text-[#504C4C]">
+              <p> Delivery Charge </p>
+              <p className=" ml-[-57px]">Rs. {DeliveryCharge} /-</p>
             </div>
           </div>
 
@@ -208,7 +204,13 @@ const Menu: React.FC = () => {
 
           <div className=" mt-[10px] ml-[-35px] flex gap-[140px]">
             <p className="totalamount"> Grand Total </p>
-            <p className=" ml-[-10px]">Rs. {GrandTotal}/-</p>
+            <p className=" ml-[-10px]">Rs. {GrandTotal} /-</p>
+          </div>
+
+          <div className="mt-[45px]">
+            <button className="bg-[#CCA311] text-[#fff] w-[150px] h-[30px] ml-[60px]">
+              Proceed
+            </button>
           </div>
         </div>
       </div>

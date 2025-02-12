@@ -4,6 +4,7 @@ import Login from "./Components/dashboard/Login";
 import Home from "./Components/dashboard/Home";
 import SearchResults from "./Components/Order&search.tsx/searchResults";
 import ResFood from "./Components/Order&search.tsx/resFood";
+import Cart from "./Components/dashboard/Cart";
 
 const Router: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ const Router: React.FC = () => {
           <Route path="result/" element={<SearchResults/>} />
           <Route path="home/result/" element={<SearchResults/>} />
           <Route path="restaurantFoods/" element={<ResFood/>} />
-          <Route path="restaurantFoods/" element={<ResFood/>} />
+          <Route path="cart/" element={<Cart/>} />
           
         </Routes>
       </BrowserRouter>
