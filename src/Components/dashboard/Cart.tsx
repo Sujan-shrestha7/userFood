@@ -3,13 +3,22 @@ import HomeNav from "../homeNav";
 import search from "..//images/search.png";
 
 const Cart = () => {
+  const details = [
+    {
+      fName: "chicken pizza, CocaCola",
+      restName: "VIP Thakali Restaurant",
+      Location: "Banepa-buspark",
+      items: 3,
+    },
+  ];
+
   return (
     <div>
       <HomeNav />
       <div className="my-[100px]">
         <div className="flex items-center justify-between px-[80px]">
-          <p className="text-[28px] ml-[50px] font-semibold text-[#473F40]">
-            My Cart
+          <p className="text-[28px] font-semibold text-[#473F40]">
+            Your Search Results
           </p>
           <div className="relative flex items-center">
             <img
@@ -30,8 +39,18 @@ const Cart = () => {
 
         {/* Divider Line */}
         <div className="h-[2px] mt-[30px] w-[90%] ml-[5%] rounded-[10px] bg-[#FFFFFF] shadow-lg" />
+
+        {/* Search Results */}
+        <div className="pt-[70px] pl-[160px] flex flex-wrap gap-x-[25px] gap-y-[50px] ">
+            
+            {details.map((d, index) => (
+                <div className="w-auto h-[45px] bg-[#fff]">
+                  <p>{d.fName} - {d.restName},{d.Location}({d.items})</p>
+                </div>
+            ))}
+            </div>
+        </div>
       </div>
-    </div>
   );
 };
 
