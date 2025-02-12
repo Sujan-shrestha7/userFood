@@ -3,7 +3,10 @@ import HomeNav from "../homeNav";
 import background from "../images/background.png";
 import vip from "../images/vip.png";
 import location from "../images/location.png";
+import bg from "../images/bg.png";
 import "../Navbar.css";
+import Menu from "./menu";
+import Footer from "../Footer";
 
 const ResFood: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("Menu");
@@ -11,7 +14,7 @@ const ResFood: React.FC = () => {
   const restaurant = [
     {
       name: "VIP Thakali Restaurant",
-      img: background,
+      img: bg,
       location: "Banepa-busbark, Banepa",
       rating: 3.8,
     },
@@ -33,7 +36,7 @@ const ResFood: React.FC = () => {
 
   return (
     <div>
-      <HomeNav />
+      <HomeNav /><div className="mb-[100px]">
       {restaurant.map((rest, index) => (
         <div key={index} className="relative overflow-hidden">
           <h2 className="absolute items-center justify-center mt-[4%] ml-[35%] text-[#FFF] text-[52px] font-bold bg-black px-4 py-2 rounded-lg">
@@ -70,7 +73,7 @@ const ResFood: React.FC = () => {
       <nav>
         <div className="flex gap-[120px] mt-[40px] ml-[15%]">
           <button
-            className={`text-[16px] bg-transparent border-none font-bold cursor-pointer px-4 py-2 ${
+            className={`text-[18px] bg-transparent border-none font-bold cursor-pointer px-4 py-2 ${
               activeTab === "Menu" ? "border-b-4 border-none text-orange-500" : "text-gray-700"
             }`}
             onClick={() => setActiveTab("Menu")}
@@ -80,7 +83,7 @@ const ResFood: React.FC = () => {
             Menu
           </button>
           <button
-            className={`text-[16px] bg-transparent border-none font-bold cursor-pointer px-4 py-2 ${
+            className={`text-[18px] bg-transparent border-none font-bold cursor-pointer px-4 py-2 ${
               activeTab === "About-Us" ? "border-b-4 border-none text-orange-500" : "text-gray-700"
             }`}
             onClick={() => setActiveTab("About-Us")}
@@ -90,7 +93,7 @@ const ResFood: React.FC = () => {
             About Us
           </button>
           <button
-            className={`text-[16px] bg-transparent border-none font-bold cursor-pointer px-4 py-2 ${
+            className={`text-[18px] bg-transparent border-none font-bold cursor-pointer px-4 py-2 ${
               activeTab === "Branches" ? "border-b-4 border-none text-orange-500" : "text-gray-700"
             }`}
             onClick={() => setActiveTab("Branches")}
@@ -109,7 +112,7 @@ const ResFood: React.FC = () => {
           role="tabpanel"
           className={`${activeTab === "Menu" ? "block" : "hidden"} text-gray-700`}
         >
-          <p>Here's the menu with delicious items!</p>
+          <Menu/>
         </div>
         <div
           id="tab-About-Us"
@@ -126,6 +129,8 @@ const ResFood: React.FC = () => {
           <p>Find us in Banepa, Dhulikhel, and Kathmandu!</p>
         </div>
       </div>
+      </div>
+      <Footer/>
     </div>
   );
 };

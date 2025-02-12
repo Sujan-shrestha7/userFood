@@ -51,3 +51,14 @@
 .restaurantName{
     font-weight: bolder;
 }
+
+.foodstyle{
+    font-weight: bold;
+}
+
+
+
+/* menu */
+.totalamount{
+    font-weight: 500;
+}
