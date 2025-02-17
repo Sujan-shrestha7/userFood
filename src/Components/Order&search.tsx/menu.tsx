@@ -109,6 +109,8 @@ const Menu: React.FC = () => {
               </button>
             </div>
           </div>
+
+          
           {/* searched items  */}
           <div className="text-[16px] w-[600px] ml-[-30px] mt-[40px]">
             {food.map((rest, index) => (

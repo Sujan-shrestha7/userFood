@@ -26,6 +26,10 @@
 
 
 /* Home  */
+.slidebar{
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
 .question {
     font-size: 55px;
     font-family: 'Righteous', sans-serif;

@@ -5,6 +5,7 @@ import Home from "./Components/dashboard/Home";
 import SearchResults from "./Components/Order&search.tsx/searchResults";
 import ResFood from "./Components/Order&search.tsx/resFood";
 import Cart from "./Components/dashboard/Cart";
+import Payment from "./Components/Payment.tsx/payment";
 
 const Router: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const Router: React.FC = () => {
           <Route path="home/result/" element={<SearchResults/>} />
           <Route path="restaurantFoods/" element={<ResFood/>} />
           <Route path="cart/" element={<Cart/>} />
+          <Route path="payment/" element={<Payment/>} />
           
         </Routes>
       </BrowserRouter>

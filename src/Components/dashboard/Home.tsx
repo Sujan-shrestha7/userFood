@@ -12,23 +12,90 @@ import liveTrack from "../images/livetrack.png";
 import mblApp from "../images/mblApp.png";
 import backMblApp from "../images/backmblApp.png";
 import discount from "../images/discount.png";
+import categories from "../images/categories.png";
 import Footer from "../Footer";
 import HomeNav from "../homeNav";
-import SearchResults from "../Order&search.tsx/searchResults";
 import { useNavigate } from "react-router-dom";
+import location from "../images/location.png";
+import vipth from "../images/vipth.png";
+import rightsidebar  from '../images/rigthside.png';
+import leftsidebar  from '../images/leftside.png';
 
 const Home = () => {
-  
-    const navigate = useNavigate();
-  const results = [
-    { name: 'Vera pizza', remaining: '8 days remaining' },
-    { name: ' Chicken Pizza', remaining: '8 days remaining' },
-    { name: 'Pizza', remaining: '8 days remaining' },
-    { name: 'Pizza', remaining: '8 days remaining' },
+  const navigate = useNavigate();
+
+  const fullhrres = [
+    {
+      name: "VIP Thakali Restaurant",
+      Location: "Banepa buspark, Banepa",
+      img: vipth,
+      rating : 3.5,
+    },
+    {
+      name: "VIP Thakali Restaurant",
+      Location: "Banepa buspark, Banepa",
+      img: vipth,
+      rating : 5,
+    },
+    {
+      name: "VIP Thakali Restaurant",
+      Location: "Banepa buspark, Banepa",
+      img: vipth,
+      rating : 3,
+    },
+    {
+      name: "VIP Thakali Restaurant",
+      Location: "Banepa buspark, Banepa",
+      img: vipth,
+      rating : 3.5,
+    },
+    {
+      name: "VIP Thakali Restaurant",
+      Location: "Banepa buspark, Banepa",
+      img: vipth,
+      rating : 3.5,
+    },
+    {
+      name: "VIP Thakali Restaurant",
+      Location: "Banepa buspark, Banepa",
+      img: vipth,
+      rating : 3.5,
+    },
   ];
+  const Categories = [
+    { name: "Traditional Nepali", img: categories },
+    { name: "Newari cousine", img: categories },
+    { name: "Tibetan & Himalayan Cuisine", img: categories },
+    { name: "Sweets & Desserts", img: categories },
+    { name: "Japnese", img: categories },
+    { name: "Biryani", img: categories },
+    { name: "Indian cousine", img: categories },
+  ];
+  const results = [
+    { name: "Vera pizza", remaining: "8 days remaining" },
+    { name: " Chicken Pizza", remaining: "8 days remaining" },
+    { name: "Pizza", remaining: "8 days remaining" },
+    { name: "Pizza", remaining: "8 days remaining" },
+  ];
+
+   // Helper function to generate stars based on rating
+   const renderStars = (rating: number) => {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 >= 0.5;
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+    return (
+      <div className="flex gap-[2px]">
+        {"★".repeat(fullStars)}
+        {halfStar && "☆"}
+        {"☆".repeat(emptyStars)}
+      </div>
+    );
+  };
+
   return (
     <div>
-      < HomeNav/>
+      <HomeNav />
       <div className="flex flex-wrap items-center justify-center">
         <div className="mb-[60px]  ml-[110px]">
           <h1 className="question">Are You Hungry ?</h1>
@@ -36,7 +103,7 @@ const Home = () => {
             <div className="relative flex items-center justify-center">
               <input
                 type="text"
-                className="h-[35px] w-[170px] bg-[#E5E1E1] pl-[30px] rounded-[5px] border-none"
+                className="h-[45px] w-[180px] bg-[#E5E1E1] pl-[30px] rounded-[5px] border-none"
                 placeholder="Location..."
               />
               <img
@@ -50,7 +117,7 @@ const Home = () => {
             <div className="relative flex items-center justify-center">
               <input
                 type="text"
-                className="h-[35px] w-[220px] bg-[#E5E1E1] pl-[30px] rounded-[5px] border-none"
+                className="h-[45px] w-[220px] bg-[#E5E1E1] pl-[30px] rounded-[5px] border-none"
                 placeholder="Search for restaurants, food"
               />
               <img
@@ -61,49 +128,145 @@ const Home = () => {
             </div>
 
             <div>
-              <button className="h-[35px] w-[120px] border-none bg-[#FC6E4F] text-[#fff] text-[15px] rounded-[5px] cursor-pointer">
+              <button className="h-[45px] w-[120px] border-none bg-[#FC6E4F] text-[#fff] text-[18px] rounded-[5px] cursor-pointer">
                 Search
               </button>
             </div>
           </div>
         </div>
         <div>
-          <img src={homeImg} className="w-[710px] h-[580px]" alt="" />
+          <img
+            src={homeImg}
+            className="popularitem w-[680px] h-[550px]"
+            alt=""
+          />
         </div>
       </div>
 
-      <div className="w-full h-[650px] bg-[#F9F9F9] relative">
-        <div>
-          <p className="popularitem absolute top-[10%] left-[43%] text-center text-[36px]">
-            Popular Items
-          </p>
+      {/* top categories */}
+      <div className="w-full h-[480px] p-[70px] bg-[#F2F2F2]">
+        <p className="popularitem w-full text-center text-[32px]">
+          Our Top Categories
+        </p>
+        <div className="w-full gap-[20px] flex justify-center mt-[60px]">
+          <div>
+            <img src={leftsidebar} className=" mt-[65px] h-[30px] w-[45px]" alt="" />
+          </div>
+          <div className="slidebar w-[1000px] overflow-x-auto">
+            <div className="flex gap-[30px] justify-center">
+              {Categories.map((C, index) => (
+                <div
+                  key={index}
+                  className="w-[180px] min-w-[180px] h-[170px] bg-[#fff] flex flex-col items-center justify-center shadow-md rounded-[20px]"
+                >
+                  <img
+                    src={C.img}
+                    className="w-[140px] h-[130px] bg-transparent"
+                    alt=""
+                  />
+                  <p className="popularitem text-lg font-semibold">{C.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <img src={rightsidebar} className=" mt-[60px] h-[35px] w-[45px]" alt="" />
+          </div>
         </div>
+      </div>
 
-        <div className="h-[2px] w-[90%] ml-[5%] mt-[30px] rounded-[10px] bg-[#FFFFFF] shadow-lg" />
-        <div className="pt-[160px] pl-[160px] flex flex-wrap gap-[25px]" onClick={() => navigate("result/")}>
+      <div className="w-full h-[620px] bg-[#D5D2D2] relative">
+        <p className="popularitem mt-[70px] w-full text-center text-[36px]">
+          Today's special
+        </p>
+        <div
+          className="pt-[60px] pl-[160px] flex flex-wrap gap-[25px]"
+          onClick={() => navigate("result/")}
+        >
           {results.map((result, index) => (
             <div key={index} className="cursor-pointer">
               <div className="h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative overflow-hidden">
                 <div className="absolute h-[70px] w-[100px] top-[180px] text-[#fff] bg-[#D1A815] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
                   <div className="flex mt-[10px] ml-[10px]">
                     <p className="text-[36px] font-bold">15</p>
-                    <p>% <span className="text-[18px]">Off</span></p>
+                    <p>
+                      % <span className="text-[18px]">Off</span>
+                    </p>
                   </div>
                 </div>
-                <img src={food} className="h-full w-full object-cover" alt="Food" />
+                <img
+                  src={food}
+                  className="h-full w-full object-cover"
+                  alt="Food"
+                />
               </div>
-              <p className="HomefoodName text-[22px] pl-[35px] pt-[15px] font-[Righteous-Regular, sans-serif] ">{result.name}</p>
-              <p className="w-[180px] h-[35px] bg-[#FFE6D9] text-[#F17228] text-center ml-[30px] mt-[15px] pt-[5px] rounded-[8px] shadow-lg">
+              <p className="HomefoodName text-[22px] pl-[35px] pt-[15px] font-[Righteous-Regular, sans-serif] ">
+                {result.name}
+              </p>
+              <p className="HomefoodName w-[180px] h-[35px] bg-[#FFE6D9] text-[#F17228] text-center ml-[30px] mt-[15px] pt-[5px] rounded-[8px] shadow-lg">
                 {result.remaining}
               </p>
             </div>
           ))}
         </div>
         <div className="HomeFoodName flex items-center justify-center mt-[50px]">
-          <button className="w-[180px] h-[40px] text-[18px] text-[#fff] bg-[#D1A815] rounded-[8px] border-none shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_1px_10px_rgba(0,0,0,0.04)]">
+          <button className="w-[180px] h-[40px] text-[18px] text-[#fff] bg-[#D1A815] rounded-[8px] border-none shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_1px_10px_rgba(0,0,0,0.04)] cursor-pointer">
             View All
             <img src={icon} className="h-[13px] w-[13px] pl-[5px] " alt="" />
           </button>
+        </div>
+      </div>
+
+      {/* top categories */}
+      <div className="w-full h-[500px] p-[70px] bg-[#F2F2F2]">
+        <p className="popularitem w-full text-center text-[32px]">
+          24/7 opened student
+        </p>
+        <div className="w-full flex justify-center gap-[20px] mt-[60px]">
+        <div>
+            <img src={leftsidebar} className=" mt-[60px] h-[35px] w-[45px]" alt="" />
+          </div>
+          <div className="slidebar w-[1000px] overflow-x-auto ">
+            <div className="flex gap-x-[30px] justify-center">
+              {fullhrres.map((f, index) => (
+                <div>
+                  <div
+                    key={index}
+                    className="w-[180px] min-w-[180px] h-[170px] bg-[#fff] flex flex-col items-center justify-center shadow-md rounded-[20px]"
+                  >
+                    <img
+                      src={f.img}
+                      className="w-[180px] h-[165px] rounded-[20px] bg-transparent"
+                      alt=""
+                    />
+                  </div>
+
+                  <div className="flex w-full ">
+                    <img src={location} className="w-[25px] h-[25px]" alt="" />
+                    <p className="text-[14px] text-center font-bold pt-[5px] font-semibold">{f.name}</p>
+                  </div>
+                  
+                  <div className="flex w-full">
+                    <p className="text-[14px] text-center font-bold pt-[5px] font-semibold">{f.Location}</p>
+                  </div>
+
+                  <div>
+                {/* Rating */}
+                <div className="flex text-[#CA5F1A] text-[28px]">
+                  {renderStars(f.rating)}
+                  <span className="ml-[5px] text-[#473F40] pt-[15px] text-[14px]">
+                    ({f.rating})
+                  </span>
+                </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div>
+            <img src={rightsidebar} className=" mt-[60px] h-[35px] w-[45px]" alt="" />
+          </div>
         </div>
       </div>
 
@@ -213,7 +376,7 @@ const Home = () => {
           <img src={icon} className="h-[13px] w-[13px] pl-[5px]" alt="icon" />
         </button>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

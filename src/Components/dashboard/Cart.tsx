@@ -1,16 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import HomeNav from "../homeNav";
 import search from "..//images/search.png";
+import resimg from "../images/vip.png";
+import sidedown from "../images/downicon.png";
 
 const Cart = () => {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   const details = [
     {
-      fName: "chicken pizza, CocaCola",
+      img: resimg,
+      fName: "Chicken pizza, CocaCola",
       restName: "VIP Thakali Restaurant",
       Location: "Banepa-buspark",
       items: 3,
+      price: 980,
+    },
+    {
+      img: resimg,
+      fName: "Chicken pizza, CocaCola",
+      restName: "VIP Thakali Restaurant",
+      Location: "Banepa-buspark",
+      items: 3,
+      price: 980,
+    },
+    {
+      img: resimg,
+      fName: "Chicken pizza, CocaCola",
+      restName: "VIP Thakali Restaurant",
+      Location: "Banepa-buspark",
+      items: 3,
+      price: 980,
     },
   ];
+
+  const myCart = [
+    { qty: 3, food: "MoMo", price: 190, Discount: 100 },
+    { qty: 2, food: "Pizza", price: 210, Discount: 0 },
+    { qty: 3, food: "Chowmein", price: 290, Discount: 0 },
+  ];
+
+  const TotalAmount = myCart.reduce((sum, item) => {
+    return sum + item.price * item.qty;
+  }, 0);
+
+  const VAT = (TotalAmount * 0.13).toFixed(2);
+  const DeliveryCharge = 150;
+  const GrandTotal = parseInt(VAT) + TotalAmount + DeliveryCharge;
 
   return (
     <div>
@@ -41,16 +81,129 @@ const Cart = () => {
         <div className="h-[2px] mt-[30px] w-[90%] ml-[5%] rounded-[10px] bg-[#FFFFFF] shadow-lg" />
 
         {/* Search Results */}
-        <div className="pt-[70px] pl-[160px] flex flex-wrap gap-x-[25px] gap-y-[50px] ">
-            
-            {details.map((d, index) => (
-                <div className="w-auto h-[45px] bg-[#fff]">
-                  <p>{d.fName} - {d.restName},{d.Location}({d.items})</p>
+        <div className="pt-[70px] pl-[100px] flex flex-wrap gap-x-[25px] gap-y-[10px]">
+          {details.map((d, index) => ( 
+            <div className="flex gap-[20px]">
+            <div key={index} className="w-[1200px] gap-[20px]">
+              <div className="h-auto flex items-center justify-between flex-wrap gap-x-[30px] p-[10px] bg-[#fff]">
+                {/* Left Section (Image + Text) */}
+                <div className="flex items-center gap-[20px] pl-[15px] text-[18px]">
+                  <img
+                    src={d.img}
+                    className="h-[35px] w-[35px] rounded-full"
+                    alt=""
+                  />
+                  <p>
+                    {d.fName} - {d.restName}, {d.Location} ({d.items}) - Rs.{" "}
+                    {d.price}/-
+                  </p>
                 </div>
-            ))}
+
+                {/* Right Section (Remove Button and Image Toggling) */}
+                <div className="flex gap-[30px]">
+                  <div
+                    className="pt-[10px] cursor-pointer"
+                    onClick={() => toggleExpand(index)}
+                  >
+                    <img
+                      src={sidedown}
+                      className={`transition-all duration-300 ${
+                        expandedIndex === index
+                          ? "h-[15px] w-[20px]"
+                          : "h-[15px] w-[20px]" // Default size
+                      }`}
+                      alt="Expand"
+                    />
+                  </div>
+                  <button className="w-[130px] h-[35px] cursor-pointer text-[#fff] text-[16px] border-none bg-[#7C1600]">
+                    Remove
+                  </button>
+                </div>
+              </div>
+
+              {/* Conditionally render the extra content when expanded */}
+              {expandedIndex === index && (
+                <div className="w-full bg-[#F1E8E8] p-[15px] mt-[10px]">
+                  {/* cart  */}
+                  <div className="flex items-center justify-center">
+                    <div className="bg-white shadow-lg p-6 rounded-lg">
+                      {/* Foods and Total Header */}
+                      <div className="flex justify-between mt-[20px] w-[380px] mb-[30px]">
+                        <p className="font-semibold">Foods</p>
+                        <p className="font-semibold">Total</p>
+                      </div>
+
+                      {/* Cart Items */}
+                      <div className="w-[400px]">
+                        {myCart.map((item, index) => (
+                          <div
+                            key={index}
+                            className="mt-[5px] flex justify-between"
+                          >
+                            <div className="flex text-[#504C4C] text-[16px] gap-[25px]">
+                              <p className="ml-[-30px]">{item.qty}x</p>
+                              <p>
+                                {item.food} ({item.price})
+                              </p>
+                            </div>
+                            <p className="text-right text-[14px]">
+                              Rs. {item.price * item.qty}/-
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Charges and Totals */}
+                      <div className="text-[#888383] ml-[10px] text-[14px]">
+                        <div className="mt-[10px] flex justify-between text-[#504C4C]">
+                          <p>Sub Total</p>
+                          <p>Rs. {TotalAmount}/-</p>
+                        </div>
+                        <div className="mt-[5px] flex justify-between text-[#504C4C]">
+                          <p>VAT</p>
+                          <p>Rs. {VAT}/-</p>
+                        </div>
+                        <div className="mt-[5px] flex justify-between text-[#504C4C]">
+                          <p>Service Charge</p>
+                          <p>Rs. 0/-</p>
+                        </div>
+                        <div className="mt-[5px] flex justify-between text-[#504C4C]">
+                          <p>Delivery Charge</p>
+                          <p>Rs. {DeliveryCharge} /-</p>
+                        </div>
+                      </div>
+
+                      {/* Divider Line */}
+                      <div className="h-[2px] mt-[20px] w-[400px] bg-[#ccc] mx-auto" />
+
+                      {/* Grand Total */}
+                      <div className="mt-[10px] flex justify-between font-bold text-lg">
+                        <p>Grand Total</p>
+                        <p>Rs. {GrandTotal} /-</p>
+                      </div>
+
+                      {/* Proceed Button */}
+                      <div className="mt-[25px] flex justify-center">
+                        <button className="bg-[#CCA311] text-[#fff] w-[150px] h-[40px] rounded-md text-[18px]">
+                          Proceed
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
+            
+            <div className="pt-[10px]">
+                <button className="w-[130px] h-[35px] cursor-pointer text-[#fff] text-[16px] bg-[#015D18]">
+                  Proceed
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
+    </div>
   );
 };
 
