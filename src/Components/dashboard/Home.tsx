@@ -97,10 +97,10 @@ const Home = () => {
     <div>
       <HomeNav />
       <div className="flex flex-wrap items-center justify-center">
-        <div className="mb-[60px]  ml-[110px]">
+        <div className="search-food mb-[60px]  ml-[110px]">
           <h1 className="question">Are You Hungry ?</h1>
-          <div className="w-[620px] h-[120px] flex flex-wrap gap-[20px] items-center justify-center mt-[30px] bg-[#fff] rounded-[10px] shadow-lg">
-            <div className="relative flex items-center justify-center">
+          <div className="search-box w-[620px] h-[120px] flex flex-wrap gap-[20px] items-center justify-center mt-[30px] bg-[#fff] rounded-[10px] shadow-lg">
+            <div className=" relative flex items-center justify-center">
               <input
                 type="text"
                 className="h-[45px] w-[180px] bg-[#E5E1E1] pl-[30px] rounded-[5px] border-none"

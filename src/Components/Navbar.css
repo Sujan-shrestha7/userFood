@@ -23,7 +23,9 @@
 .AddRes{
     font-weight: bolder;
 }
-
+.hambergur{
+    display: none;
+}
 
 /* Home  */
 .slidebar{
@@ -48,10 +50,7 @@
 .AboutDes{
     font-family: 'righteous',sans-serif;
 }
-
-
 /* restaurant view */
-
 .restaurantName{
     font-weight: bolder;
 }
@@ -65,4 +64,77 @@
 /* menu */
 .totalamount{
     font-weight: 500;
+}
+
+/* responsive  */
+
+@media (max-width: 768px) {
+
+    .headertag{
+        width: 100%;
+        height: 65px;
+        padding-top: 10px;
+    }
+    .xittoLogo{
+        position: relative;
+        height: 35px;
+        width: 35px;
+    }
+    .xittoofood{
+        font-size: 20px;
+        margin-left: -10px;
+    }
+    .icon-button{
+        position: relative;
+        display: flex;
+        gap: 12px;
+    }
+    .AddRes{
+        display: none;
+    }
+    .profile-icon{
+        margin-right: 0;
+    }
+    .allsection{
+        display: flex;
+        gap: 0;
+        margin-left: 0;
+    }
+    .hambergur{
+        position: relative;
+        font-size: 24px;
+        display: block;
+        margin: 5px 8px 0 12px;
+        padding-top: 6px;
+        width: 90px;
+        background: transparent;
+        border: 1px solid #D5D2D2;
+        border-radius: 5px;
+    }
+    .description{
+        display: none;
+    }
+
+    .logosection{
+        display: flex;
+    }
+
+
+    /* homepage */
+    .search-food{
+        /* margin: 10px 0px 0px 250px; */
+    }
+    .question{
+        position: relative;
+        font-size: 32px;
+        margin-top: 50px;
+        margin-left: 130px;
+    }
+    .search-box{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 120px;
+    }
+
 }

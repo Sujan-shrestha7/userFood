@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import logo from "./images/logo.png";
-import './Navbar.css';
-import cart from './images/cart.png';
-import notification from './images/notification.png';
-import profile from './images/profile.png';
 import { useNavigate } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi";
+import logo from "./images/logo.png";
+import cart from "./images/cart.png";
+import notification from "./images/notification.png";
+import profile from "./images/profile.png";
+import "./Navbar.css";
 
 interface MenuItem {
   name: string;
@@ -12,8 +13,13 @@ interface MenuItem {
 }
 
 const HomeNav: React.FC = () => {
+  const [isToggleOpen, setIsToggleOpen] = useState<boolean>(false);
   const [activeItem, setActiveItem] = useState<string>("Dashboard");
-    const navigate = useNavigate();
+  const [showProfileMenu, setShowProfileMenu] = useState<boolean>(false);
+  const navigate = useNavigate();
+
+  const username: string = "sujan_12";
+
   const menuItems: MenuItem[] = [
     { name: "Dashboard", path: "/home" },
     { name: "Orders", path: "/order" },
@@ -22,47 +28,83 @@ const HomeNav: React.FC = () => {
   ];
 
   useEffect(() => {
-    const currentPath = window.location.pathname;
-    const currentItem = menuItems.find((item) => item.path === currentPath);
+    const currentPath: string = window.location.pathname;
+    const currentItem: MenuItem | undefined = menuItems.find(
+      (item) => item.path === currentPath
+    );
     if (currentItem) {
       setActiveItem(currentItem.name);
     }
   }, []);
 
+  const toggleProfileMenu = (): void => {
+    setShowProfileMenu((prev) => !prev);
+  };
+
   return (
     <div className="sticky top-0 left-0 right-0 z-50 h-[60px] pt-[5px] w-full bg-[#FFFFFF] shadow-md">
-      <div className="flex ml-[100px] gap-[100px] items-center">
-        
-        {/* Logo Section */} 
-        <div className="flex items-center w-[400px] cursor-pointer" onClick={() => navigate("/home")}>
-          <img src={logo} alt="Logo" className="h-[50px] w-[50px]" />
+      <div className="allsection flex ml-[100px] gap-[100px] items-center">
+        <button
+          className="hambergur md:hidden"
+          onClick={() => setIsToggleOpen((prev) => !prev)}
+        >
+          {isToggleOpen ? <FiX /> : <FiMenu />}
+        </button>
+
+        <div
+          className="logosection flex items-center w-[400px] cursor-pointer"
+          onClick={() => navigate("/home")}
+        >
+          <img src={logo} alt="Logo" className="xittoLogo h-[50px] w-[50px]" />
           <p className="xittoofood text-[32px] pl-[12px]">XittooFood</p>
         </div>
 
-        {/* Description Section */}
         <div className="description flex text-[#473F40] w-[350px] items-center justify-center ml-[-40px]">
           <p>"From our kitchen to your doorstep"</p>
         </div>
 
-        {/* Icons & Buttons */}
-        <div className="flex w-[430px] gap-[40px] items-center justify-center">
+        <div className="icon-button flex w-[430px] gap-[40px] items-center justify-center">
           <button className="AddRes h-[40px] w-[150px] text-[#473F40] text-[16px] font-bold bg-[#FFFFFF] border-none cursor-pointer">
             Add Restaurant
           </button>
 
-          {/* Cart Icon */}
-          <div className="rounded-full h-[40px] w-[40px] bg-[#D9D9D9] cursor-pointer flex items-center justify-center" onClick={()=>navigate("/cart")}>
+          <div
+            className="rounded-full h-[40px] w-[40px] bg-[#D9D9D9] cursor-pointer flex items-center justify-center"
+            onClick={() => navigate("/cart")}
+          >
             <img src={cart} className="h-[25px] w-[35px]" alt="Cart" />
           </div>
 
-          {/* Notification Icon */}
           <div className="rounded-full h-[40px] w-[40px] bg-[#D9D9D9] cursor-pointer flex items-center justify-center">
             <img src={notification} className="h-[25px] w-[23px]" alt="Notification" />
           </div>
 
-          {/* Profile Icon */}
-          <div className="rounded-full h-[40px] w-[40px] cursor-pointer flex items-center justify-center">
-            <img src={profile} className="h-[40px] w-[40px]" alt="Profile" />
+          <div className="profile-icon relative mr-[-100px]">
+            <div
+              className="rounded-full h-[40px] w-[40px] cursor-pointer flex items-center justify-center"
+              onClick={toggleProfileMenu}
+            >
+              <img src={profile} className="h-[40px] w-[40px]" alt="Profile" />
+            </div>
+
+            {showProfileMenu && (
+              <div className="pl-[20px] absolute right-[-40px] mt-[10px] w-[200px] h-[300px] bg-[#636363] text-[#fff] text-[18px] shadow-lg rounded-[10px] flex flex-col justify-between">
+                <ul className="text-white mt-[20px]">
+                  <li className="p-2 mt-[20px] cursor-pointer hover:bg-gray-700 list-none" onClick={() => navigate("/profile")}>
+                    {username}
+                  </li>
+                  <li className="p-2 mt-[20px] cursor-pointer hover:bg-gray-700 list-none" onClick={() => navigate("/profile")}>
+                    View Profile
+                  </li>
+                  <li className="p-2 mt-[10px] cursor-pointer hover:bg-gray-700 list-none" onClick={() => navigate("/settings")}>
+                    Settings
+                  </li>
+                </ul>
+                <li className="p-2 mb-[50px] mt-[20px] cursor-pointer hover:bg-gray-700 list-none ml-[-20px] text-center">
+                  Logout
+                </li>
+              </div>
+            )}
           </div>
         </div>
       </div>

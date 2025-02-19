@@ -6,6 +6,7 @@ import SearchResults from "./Components/Order&search.tsx/searchResults";
 import ResFood from "./Components/Order&search.tsx/resFood";
 import Cart from "./Components/dashboard/Cart";
 import Payment from "./Components/Payment.tsx/payment";
+import HomeNav from "./Components/homeNav";
 
 const Router: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const Router: React.FC = () => {
           <Route path="restaurantFoods/" element={<ResFood/>} />
           <Route path="cart/" element={<Cart/>} />
           <Route path="payment/" element={<Payment/>} />
+          <Route path="homenavbar/" element={<HomeNav/>} />
           
         </Routes>
       </BrowserRouter>
