@@ -1,0 +1,154 @@
+/* @media (max-width: 768px) {
+    .result-cartMbl{
+        display: none;
+    }
+    .search-result-box{
+        position: absolute;
+        margin-top: -30px;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+    .search-text{
+        font-size: 18px;
+        margin-left: 15px;
+    }
+    .searchBox{
+        width: 120px;
+    }
+    .searchButton{
+        width: 70px;
+        margin-right: 15px;
+    }
+    .divider{
+        position: absolute;
+    }
+    .result-total-box{
+        position: absolute;
+        margin: 0 20px;
+        padding: 0;
+    }
+    .result-category{
+        gap: 20px;
+
+    }
+    .result-box{
+        width: 150px;
+        height: 140px;
+        margin: 50px 0px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .result-foodName{
+        font-family: 'Righteous', sans-serif;
+        font-size: 14px;
+        padding: 0;
+        margin-top: -45px;
+        width: auto;
+    }
+    .result-foodLocation{
+        font-family: 'Righteous', sans-serif;
+        font-size: 14px;
+    }
+    .result-location-box{
+        width: 148px;
+        margin-top: -10px;
+        gap: 3px;
+    }
+    .result-cartMbl{
+        display: block;
+        width: 90px;
+        margin-top: 5px;
+        margin-left: 20px;
+    }
+    .result-cart{
+        display: none;
+    }
+    .rating-box{
+        font-size: 22px;
+    }
+} */
+
+
+@media (max-width: 768px) {
+    .result-cartMbl {
+        display: block;
+        width: 90px;
+        margin: 5px 20px 0 0;
+    }
+
+    .search-result-box {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        margin-top: -30px;
+        gap: 30px;
+
+    }
+
+    .search-text {
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+
+    .searchBox {
+        width: 150px;
+
+    }
+
+    .searchButton {
+        width: 70px;
+        margin-right: 10px;
+    }
+
+    .divider {
+        position: relative;
+        width: 90%;
+        height: 1px;
+    }
+
+    .result-total-box {
+        margin: 35px 10px;
+        padding: 0;
+    }
+
+    .result-category {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: -15px;
+    }
+
+    .result-box {
+        max-width: 120px;
+        height: 110px;
+    }
+
+    .result-foodName,
+    .result-foodLocation {
+        font-family: 'Righteous', sans-serif;
+        font-size: 14px;
+        text-align: center;
+        margin-top: -10px;
+    }
+    .result-foodName{
+        font-size: 18px;
+    }
+
+    .result-location-box {
+        width: 100%;
+        max-width: 148px;
+        gap: 3px;
+    }
+
+    .result-cart {
+        display: none;
+    }
+
+    .rating-box {
+        font-size: 1.4rem;
+    }
+}

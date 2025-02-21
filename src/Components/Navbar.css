@@ -40,15 +40,35 @@
 .popularitem {
     font-family: 'Righteous', sans-serif;
 }
+.categories-intro{
+    font-family: 'Righteous', sans-serif;
+}
 
+.todayspecial-intro{
+    font-family: 'Righteous', sans-serif;
+}
 .HomefoodName {
     font-family: 'Righteous', sans-serif;
 }
 .OfferTime {
     font-family: 'Righteous', sans-serif;
 }
-.AboutDes{
+.About-us-head{
     font-family: 'righteous',sans-serif;
+}
+.special-remaining{
+    font-family: 'Righteous', sans-serif;
+}
+.categories-name{
+    
+    font-family: 'Righteous', sans-serif;
+}
+
+.alltime-open-intro{
+    font-family: 'Righteous', sans-serif;
+}
+.formobileview{
+    display: none;
 }
 /* restaurant view */
 .restaurantName{
@@ -58,7 +78,6 @@
 .foodstyle{
     font-weight: bold;
 }
-
 
 
 /* menu */
@@ -83,6 +102,7 @@
     .xittoofood{
         font-size: 20px;
         margin-left: -10px;
+        margin-top: 5px;
     }
     .icon-button{
         position: relative;
@@ -119,22 +139,221 @@
         display: flex;
     }
 
-
     /* homepage */
     .search-food{
-        /* margin: 10px 0px 0px 250px; */
+        margin-left: 0;
+        position: relative;
+        margin-top: 50px;
     }
     .question{
-        position: relative;
         font-size: 32px;
-        margin-top: 50px;
-        margin-left: 130px;
+        margin-top: 40px;
     }
     .search-box{
-        display: flex;
-        flex-direction: column;
-        width: 400px;
+        gap: 7px;
+        width: 335px;
         height: 120px;
+        display: flex;
+        margin-top: 40px;
+    }
+    .location-box{
+        width: 100px;
+        height: 45px;
+        padding-left: -5px;
+    }
+    .location-img{
+        /* margin-top: 18px; */
+    }
+    .resSearch-box{
+        width: 200px;
+    }
+    .search-button{
+        margin-top: -50px;
+        width: 300px;
+    }
+    .home-img{
+        margin-top: -70px;
+        width: 100%;
+        height: 100%;
     }
 
+    /* top categoris */
+    .categories{
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding-top: 30px;
+        padding-left: 20px;
+    }
+    .categories-intro{
+        font-family: 'Righteous', sans-serif;
+        font-size: 20px;
+        margin-left: 20px;
+    }
+    .categories-item{
+        margin: 0;
+        width: 350px;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    .leftsidebar-box{
+        padding-left: -200px;
+    }
+    .leftsidebar{
+        margin: 0;
+        margin-top: 30px;
+        height: 25px;
+        width: 10px;
+    }
+    .top-categories{
+        height: 100px;
+        min-width: 120px;
+    }
+    .categories-list{
+        gap: 15px;
+    }
+    .img-categories{
+        height: 60px;
+        width: 60px;
+    }
+    .categories-name{
+        font-size: 12px;
+        font-family: 'Righteous', sans-serif;
+    }
+    .slidebar{
+    }
+
+    /* special */
+
+    .todayspecial-intro{
+        font-family: 'Righteous', sans-serif;
+        font-size: 20px;
+    }
+    .todays-result{
+        width: 100%;
+        padding: 20px 25px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .today-box{
+        height: 140px;
+        overflow: hidden;
+        width: 150px;
+    }
+    .today-offers{
+        margin: 0;
+        height: 60px;
+        width: 60px;
+        margin-top: -90px;
+    }
+    .discount-num{
+        font-size: 24px;
+        margin-left: -5px;
+    }
+    .discount-percentage{
+        font-size: 20px;
+    }
+    .discount-off{
+        font-size: 12px;
+        margin-top: 20px;
+        margin-left: -15px;
+        position: absolute;
+    }
+    .HomefoodName{
+        font-size: 18px;
+        padding-left: 8px;
+        margin-top: 0px;
+    }
+    .special-remaining{
+        font-family: 'Righteous', sans-serif;
+        font-size: 14px;
+        margin-left: 0;
+        width: 130px;
+        margin-top:7px;
+        height: 30px;
+    }
+
+
+    /* 24/7 restaurant */
+    .alltime-open-intro{
+        font-family: 'Righteous', sans-serif;
+        font-size: 20px;
+    }
+    .alltime-res-box{
+        height: 100px;
+        width: 100px;
+    }
+    .alltime-res{
+        gap: 10px;
+    }
+    .alltime-res-img{
+        height: 18px;
+        width: 18px;
+    }
+
+    /* about us */
+    .About-us{
+        margin: 0;
+        padding: 30px 0;
+    }
+    .About-us-head{
+        font-size: 28px;
+
+    }
+    .about-us-description{
+        font-size: 14px;
+    }
+    .about-us-img{
+        height: 210px;
+    }
+
+    /* install out app */
+    .installation-box{
+        width: 350px;
+        height: 100px;
+        margin: 35px 0;
+    }
+    .install-app{
+        display: block;
+        margin-top: -40px;
+    }
+    .mbl-app{
+        margin: 0;
+    }
+    .i-discount-img{
+        height: 35px;
+        padding: 0;
+        margin-left: 10px;
+    }
+    .livetracking{
+        height: 35px;
+        margin-left:-10px;
+    }
+    .i-discount-des{
+        font-size: 14px;
+    }
+    .mbl-app{
+        height: 300px;
+        width: 100%;
+    }
+    .fordesktop-view{
+        display: none;
+    }
+    .formobileview{
+        display: block;
+    }
+    .install-app-msg{
+        margin: 25px 0;
+    }
+
+    /* register restaurant */
+    .list-restaur{
+        padding:20px 20px;
+    }
+    .list-restaur p{
+        font-size: 22px;
+    }
+    .list-restaur button{
+        margin-left: 140px;
+    }
 }

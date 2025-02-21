@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import HomeNav from "../homeNav";
-import background from "../images/background.png";
 import vip from "../images/vip.png";
 import location from "../images/location.png";
 import bg from "../images/bg.png";

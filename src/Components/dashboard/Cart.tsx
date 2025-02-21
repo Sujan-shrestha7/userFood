@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import HomeNav from "../homeNav";
 import search from "..//images/search.png";
 import resimg from "../images/vip.png";
-import Payment from "../Payment.tsx/payment";
 import sidedown from "../images/downicon.png";
 import { useNavigate } from "react-router-dom";
 
