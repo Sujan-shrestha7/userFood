@@ -24,7 +24,6 @@ const Router: React.FC = () => {
           <Route path="homenavbar/" element={<HomeNav/>} />
           <Route path="footer/" element={<Footer/>} />
           
-          
         </Routes>
       </BrowserRouter>
     </div>

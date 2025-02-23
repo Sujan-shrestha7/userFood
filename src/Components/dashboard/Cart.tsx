@@ -4,6 +4,9 @@ import search from "..//images/search.png";
 import resimg from "../images/vip.png";
 import sidedown from "../images/downicon.png";
 import { useNavigate } from "react-router-dom";
+import remove from '../images/removee.webp'
+import '../css/cart.css';
+
 
 const Cart = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
@@ -12,7 +15,6 @@ const Cart = () => {
   const toggleExpand = (index) => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
-
   const details = [
     {
       img: resimg,
@@ -25,6 +27,14 @@ const Cart = () => {
     {
       img: resimg,
       fName: "Chicken pizza, CocaCola",
+      restName: "VIP Thakali Restaurant",
+      Location: "Banepa-buspark",
+      items: 3,
+      price: 980,
+    },
+    {
+      img: resimg,
+      fName: "Chicken pizza, CocaCola,Chicken pizza, CocaCola",
       restName: "VIP Thakali Restaurant",
       Location: "Banepa-buspark",
       items: 3,
@@ -57,23 +67,23 @@ const Cart = () => {
   return (
     <div>
       <HomeNav />
-      <div className="my-[100px]">
-        <div className="flex items-center justify-between px-[80px]">
-          <p className="text-[28px] font-semibold text-[#473F40]">
-            Your Search Results
+      <div className="cart-css my-[100px]">
+        <div className="cart-top flex items-center justify-between px-[80px]">
+          <p className="cart-text text-[28px] font-semibold text-[#473F40]">
+            Cart
           </p>
-          <div className="relative flex items-center">
+          <div className="cart-box relative flex items-center">
             <img
               src={search}
-              className="absolute left-[10px] h-[13px] w-[13px]"
+              className=" absolute left-[10px] h-[13px] w-[13px]"
               alt="Search Icon"
             />
             <input
               type="text"
-              className="h-[35px] w-[220px] bg-[#F5F3F2] pl-[30px] pr-[10px] rounded-[5px] border-none"
+              className="searchBox h-[35px] w-[220px] bg-[#F5F3F2] pl-[30px] pr-[10px] rounded-[5px] border-none"
               placeholder="Search for restaurants, food"
             />
-            <button className="ml-[10px] h-[35px] w-[120px] bg-[#FC6E4F] text-[#fff] text-[15px] border-none rounded-[5px] cursor-pointer">
+            <button className="searchButton ml-[10px] h-[35px] w-[120px] bg-[#FC6E4F] text-[#fff] text-[15px] border-none rounded-[5px] cursor-pointer">
               Search
             </button>
           </div>
@@ -83,33 +93,32 @@ const Cart = () => {
         <div className="h-[2px] mt-[30px] w-[90%] ml-[5%] rounded-[10px] bg-[#FFFFFF] shadow-lg" />
 
         {/* Search Results */}
-        <div className="pt-[70px] pl-[100px] flex flex-wrap gap-x-[25px] gap-y-[10px]">
+        <div className="cart-result-box pt-[70px] pl-[150px] flex flex-wrap gap-x-[25px] gap-y-[10px]">
           {details.map((d, index) => (
-            <div className="flex gap-[20px]">
-              <div key={index} className="w-[1200px] gap-[20px]">
+              <div key={index} className="cart-items-box w-[1200px] gap-[20px]">
                 <div className="h-auto flex items-center justify-between flex-wrap gap-x-[30px] p-[10px] bg-[#fff]">
                   {/* Left Section (Image + Text) */}
-                  <div className="flex gap-5">
+                  <div className="box-img-check flex gap-[5px]">
                     <input
                       type="checkbox"
-                      className="h-[20px] w-[20px] mt-[6px]"
+                      className="check-box h-[20px] w-[20px] mt-[6px]"
                       name=""
                       id=""
                     />
                     <div className="flex items-center gap-[20px] pl-[15px] text-[18px]">
                       <img
                         src={d.img}
-                        className="h-[35px] w-[35px] rounded-full"
+                        className="res-img-cart h-[35px] w-[35px] rounded-full"
                         alt=""
                       />
-                      <p>
+                      <p className="cart-details">
                         {d.fName} - {d.restName}, {d.Location} ({d.items}) - Rs.{" "}
                         {d.price}/-
                       </p>
                     </div>
                   </div>
                   {/* Right Section (Remove Button and Image Toggling) */}
-                  <div className="flex gap-[30px]">
+                  <div className="remove-expand flex gap-[30px]">
                     <div
                       className="pt-[10px] cursor-pointer"
                       onClick={() => toggleExpand(index)}
@@ -124,9 +133,10 @@ const Cart = () => {
                         alt="Expand"
                       />
                     </div>
-                    <button className="w-[130px] h-[35px] cursor-pointer text-[#fff] text-[16px] border-none bg-[#7C1600]">
+                    <button className="cartBox-removeBtn w-[130px] h-[35px] cursor-pointer text-[#fff] text-[16px] border-none bg-[#7C1600]">
                       Remove
                     </button>
+                    <img src={remove} className="mobileview-remove h-[30px]" alt="" />
                   </div>
                 </div>
 
@@ -134,20 +144,19 @@ const Cart = () => {
                 {expandedIndex === index && (
                   <div className="w-full bg-[#F1E8E8] p-[15px] mt-[10px]">
                     {/* cart  */}
-                    <div className="flex items-center justify-center">
+                    <div className="cart-More flex items-center justify-center">
                       <div className="bg-white shadow-lg p-6 rounded-lg">
                         {/* Foods and Total Header */}
-                        <div className="flex justify-between mt-[20px] w-[380px] mb-[30px]">
+                        <div className="foot-total flex justify-between mt-[20px] w-[380px] mb-[30px]">
                           <p className="font-semibold">Foods</p>
                           <p className="font-semibold">Total</p>
                         </div>
-
                         {/* Cart Items */}
                         <div className="w-[400px]">
                           {myCart.map((item, index) => (
                             <div
                               key={index}
-                              className="mt-[5px] flex justify-between"
+                              className="cartMore-box mt-[5px] flex justify-between"
                             >
                               <div className="flex text-[#504C4C] text-[16px] gap-[25px]">
                                 <p className="ml-[-30px]">{item.qty}x</p>
@@ -161,22 +170,21 @@ const Cart = () => {
                             </div>
                           ))}
                         </div>
-
                         {/* Charges and Totals */}
                         <div className="text-[#888383] ml-[10px] text-[14px]">
-                          <div className="mt-[10px] flex justify-between text-[#504C4C]">
+                          <div className="cart-subTotal mt-[10px] flex justify-between text-[#504C4C]">
                             <p>Sub Total</p>
                             <p>Rs. {TotalAmount}/-</p>
                           </div>
-                          <div className="mt-[5px] flex justify-between text-[#504C4C]">
+                          <div className="cart-VAT mt-[5px] flex justify-between text-[#504C4C]">
                             <p>VAT</p>
                             <p>Rs. {VAT}/-</p>
                           </div>
-                          <div className="mt-[5px] flex justify-between text-[#504C4C]">
+                          <div className="cart-serviceChr mt-[5px] flex justify-between text-[#504C4C]">
                             <p>Service Charge</p>
                             <p>Rs. 0/-</p>
                           </div>
-                          <div className="mt-[5px] flex justify-between text-[#504C4C]">
+                          <div className="cart-delivery mt-[5px] flex justify-between text-[#504C4C]">
                             <p>Delivery Charge</p>
                             <p>Rs. {DeliveryCharge} /-</p>
                           </div>
@@ -186,7 +194,7 @@ const Cart = () => {
                         <div className="h-[2px] mt-[20px] w-[400px] bg-[#ccc] mx-auto" />
 
                         {/* Grand Total */}
-                        <div className="mt-[10px] flex justify-between font-bold text-lg">
+                        <div className="cart-grandTotal mt-[10px] flex justify-between font-bold text-lg">
                           <p>Grand Total</p>
                           <p>Rs. {GrandTotal} /-</p>
                         </div>
@@ -195,17 +203,10 @@ const Cart = () => {
                   </div>
                 )}
               </div>
-
-              <div className="pt-[10px]">
-                <button className="w-[130px] h-[35px] cursor-pointer text-[#fff] text-[16px] bg-[#015D18]">
-                  Proceed
-                </button>
-              </div>
-            </div>
           ))}
           {/* Proceed Button */}
-          <div className="w-full flex justify-end px-[80px] mt-[25px]">
-            <button className="hover:bg-[#015D18] bg-[#CCA311] hover:text-[#fff] text-white w-[130px] h-[35px] rounded-md text-[18px] " onClick={() => navigate("/payment")}>
+          <div className="proceedBtn w-full flex justify-end px-[180px] mt-[25px]">
+            <button className=" hover:bg-[#015D18] bg-[#CCA311] hover:text-[#fff] text-white w-[130px] h-[35px] rounded-md text-[18px] " onClick={() => navigate("/payment")}>
               Proceed
             </button>
           </div>
