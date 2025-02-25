@@ -152,8 +152,8 @@ const Menu: React.FC = () => {
                     </button>
                   </div>
                 </div>
-
-                <div className="w-[110%] mt-[-5px] h-[1px] bg-[#fff]" />
+{/* divider line */}
+                <div className="w-[110%] mt-[-5px] h-[1px] bg-[#E5E5E5]" />
               </div>
             ))}
           </div>
