@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import background from "../images/background.png";
 import "../Navbar.css";
 import search from "../images/search.png";
 import cart from "../images/cart.png";
 
 const Menu: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string>("Menu");
+  // const [activeTab, setActiveTab] = useState<string>("Menu");
 
   const food = [
     { name: "chicken Pizza", Price: 790 },
@@ -53,15 +52,6 @@ const Menu: React.FC = () => {
   const DeliveryCharge = 150;
   const GrandTotal = parseInt(VAT) + TotalAmount + DeliveryCharge;
 
-  const restaurant = [
-    {
-      name: "VIP Thakali Restaurant",
-      img: background,
-      location: "Banepa-busbark, Banepa",
-      rating: 3.8,
-    },
-  ];
-
   return (
     <div className="mt-[50px] ml-[-20px]">
       <div className="flex flex-wrap gap-[100px]">
@@ -70,7 +60,7 @@ const Menu: React.FC = () => {
 
           <div>
             {popularItems.map((rest, index) => (
-              <div className="flex mb-[10px] mt-[20px] justify-between">
+              <div key={index} className=" flex mb-[10px] mt-[20px] justify-between">
                 <div className="">
                   <a
                     href=""
@@ -115,7 +105,7 @@ const Menu: React.FC = () => {
           <div className="text-[16px] w-[600px] ml-[-30px] mt-[40px]">
             {food.map((rest, index) => (
               <div>
-                <div className="flex mb-[20px] mt-[20px] justify-between">
+                <div key={index} className=" flex mb-[20px] mt-[20px] justify-between">
                   <p>{rest.name}</p>
                   <div className="flex gap-[20px]">
                     <p>Rs.{rest.Price}/- </p>
@@ -142,7 +132,7 @@ const Menu: React.FC = () => {
             </p>
             {menus.map((rest, index) => (
               <div>
-                <div className="flex mb-[10px] mt-[25px] w-[550px] text-[#363636] justify-between">
+                <div key={index} className="flex mb-[10px] mt-[25px] w-[550px] text-[#363636] justify-between">
                   <p>{rest.name}</p>
                   <div className="flex gap-[20px]">
                     <p>Rs.{rest.Price}/- </p>
@@ -171,7 +161,7 @@ const Menu: React.FC = () => {
           </div>
           <div className=" w-[300px]">
             {myCart.map((item, index) => (
-                <div className="ml-[-0px] mt-[10px] flex justify-between">
+                <div key={index} className="ml-[-0px] mt-[10px] flex justify-between">
                   <div className="flex  justify-between text-[#504C4C] text-[16px] gap-[25px]">
                     <p className="ml-[-30px]">{item.qty}x</p>
                     <p>{item.food}  ({item.price})</p>
