@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@media(max-width: 768px){
+    .all-section{
+        margin:0;
+        padding: 0;
+    }
+    .restaurant-background{
+        margin: 0;
+        padding: 0;
+        margin-bottom: 100px;
+        height: 105px;
+
+    }
+    .res-bg-name{
+        font-size: 2rem;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        margin-top: 40px;
+
+    }
+    .front-ResImg{
+        width: auto;
+        height: 100px;
+        margin: -5% 0 0 37%;
+        padding: 0;
+        position: relative;
+    }
+    .restaurantName{
+        font-size: 1rem;
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+    }
+    .location-name-icon{
+        margin: 0;
+        padding: 0;
+        gap: 0px;
+    }
+    .res-rating{
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+        margin-top: -3%;
+    }
+    .divider-line{
+        margin: 15px 20px;
+        padding: 0;
+    }
+    .navigation{
+        gap: 30px;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        margin-left: 4%;
+    }
+    .menubar{
+        padding: 0;
+        margin: 0;
+    }
+
+
+    /* menus */
+    .menus{
+        margin: 30px 10px;
+        padding: 0;
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    .popular-items{
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+    .menu-all{
+        margin: 0;
+        padding: 0;
+    }
+    .divider-desktop{
+        display: none;
+    }
+    .item-search{
+        width: 100%;
+        display: flex;
+        gap: 0;
+        justify-content: space-around;
+        margin: 0;
+        padding: 0;
+    }
+    .search-input{
+        width: 120px;
+    }
+    .search-btn{
+        width: 75px;
+        margin: 0;
+        padding: 0;
+        margin-left: 10px;
+    }
+    .searched-items{
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+    .searchItems-box{
+        /* gap: -10px; */
+        justify-content: space-around;
+        margin-left: -45px;
+        /* margin: 0; */
+        padding: 0;
+    }
+}

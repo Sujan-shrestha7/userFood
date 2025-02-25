@@ -80,65 +80,66 @@ const Payment = () => {
           </div>
         ))}
       </div>
-{/* Cart Section for mobilr (Fixed width: 420px) */}
-<div className="cart-More-mbl flex ml-[50px]">
-          <div className="bg-white shadow-lg p-6 rounded-lg">
-            {/* Foods and Total Header */}
-            <div className="foot-total flex justify-between mt-[20px] w-[380px] mb-[30px]">
-              <p className="font-semibold">Foods</p>
-              <p className="font-semibold">Total</p>
-            </div>
-            {/* Cart Items */}
-            <div className="cart-itemBox w-[400px]">
-              {myCart.map((item, index) => (
-                <div
-                  key={index}
-                  className="cartMore-box mt-[5px] flex justify-between"
-                >
-                  <div className="flex text-[#504C4C] text-[16px] gap-[25px]">
-                    <p className="ml-[-30px]">{item.qty}x</p>
-                    <p>
-                      {item.food} ({item.price})
-                    </p>
-                  </div>
-                  <p className="text-right text-[14px]">
-                    Rs. {item.price * item.qty}/-
+
+      {/* Cart Section for mobilr (Fixed width: 420px) */}
+      <div className="cart-More-mbl flex ml-[50px]">
+        <div className="bg-white shadow-lg p-6 rounded-lg">
+          {/* Foods and Total Header */}
+          <div className="foot-total flex justify-between mt-[20px] w-[380px] mb-[30px]">
+            <p className="font-semibold">Foods</p>
+            <p className="font-semibold">Total</p>
+          </div>
+          {/* Cart Items */}
+          <div className="cart-itemBox w-[400px]">
+            {myCart.map((item, index) => (
+              <div
+                key={index}
+                className="cartMore-box mt-[5px] flex justify-between"
+              >
+                <div className="flex text-[#504C4C] text-[16px] gap-[25px]">
+                  <p className="ml-[-30px]">{item.qty}x</p>
+                  <p>
+                    {item.food} ({item.price})
                   </p>
                 </div>
-              ))}
+                <p className="text-right text-[14px]">
+                  Rs. {item.price * item.qty}/-
+                </p>
+              </div>
+            ))}
+          </div>
+          {/* Charges and Totals */}
+          <div className="text-[#888383] ml-[10px] text-[14px]">
+            <div className="cart-subTotal mt-[10px] flex justify-between text-[#504C4C]">
+              <p>Sub Total</p>
+              <p>Rs. {TotalAmount}/-</p>
             </div>
-            {/* Charges and Totals */}
-            <div className="text-[#888383] ml-[10px] text-[14px]">
-              <div className="cart-subTotal mt-[10px] flex justify-between text-[#504C4C]">
-                <p>Sub Total</p>
-                <p>Rs. {TotalAmount}/-</p>
-              </div>
-              <div className="cart-VAT mt-[5px] flex justify-between text-[#504C4C]">
-                <p>VAT</p>
-                <p>Rs. {VAT}/-</p>
-              </div>
-              <div className="cart-serviceChr mt-[5px] flex justify-between text-[#504C4C]">
-                <p>Service Charge</p>
-                <p>Rs. 0/-</p>
-              </div>
-              <div className="cart-delivery mt-[5px] flex justify-between text-[#504C4C]">
-                <p>Delivery Charge</p>
-                <p>Rs. {DeliveryCharge} /-</p>
-              </div>
+            <div className="cart-VAT mt-[5px] flex justify-between text-[#504C4C]">
+              <p>VAT</p>
+              <p>Rs. {VAT}/-</p>
             </div>
-
-            {/* Divider Line */}
-            <div className="cart-divider h-[2px] mt-[20px] w-[400px] bg-[#ccc] mx-auto" />
-
-            {/* Grand Total */}
-            <div className="cart-grandTotal mt-[10px] flex justify-between font-bold text-lg">
-              <p>Grand Total</p>
-              <p>Rs. {GrandTotal} /-</p>
+            <div className="cart-serviceChr mt-[5px] flex justify-between text-[#504C4C]">
+              <p>Service Charge</p>
+              <p>Rs. 0/-</p>
+            </div>
+            <div className="cart-delivery mt-[5px] flex justify-between text-[#504C4C]">
+              <p>Delivery Charge</p>
+              <p>Rs. {DeliveryCharge} /-</p>
             </div>
           </div>
-          
-      <div className="divider h-[2px] mt-[30px] w-[90%] ml-[5%] rounded-[10px] bg-[#FFFFFF] shadow-lg" />
+
+          {/* Divider Line */}
+          <div className="cart-divider h-[2px] mt-[20px] w-[400px] bg-[#ccc] mx-auto" />
+
+          {/* Grand Total */}
+          <div className="cart-grandTotal mt-[10px] flex justify-between font-bold text-lg">
+            <p>Grand Total</p>
+            <p>Rs. {GrandTotal} /-</p>
+          </div>
         </div>
+
+        <div className="divider h-[2px] mt-[30px] w-[90%] ml-[5%] rounded-[10px] bg-[#FFFFFF] shadow-lg" />
+      </div>
 
       {/* Flex container for Address and Cart */}
       <div className="Order-Details flex justify-center mx-[180px] gap-[20px] pl-[50px] mt-[50px]">
