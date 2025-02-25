@@ -1,0 +1,77 @@
+
+.cart-More-mbl{
+    display: none;
+}
+@media (max-width: 768px) {
+    .cart-More-desktop{
+        display: none;
+    }
+    .allsection{
+        padding: 0;
+        margin: 0;
+    }
+    .billPayment{
+     padding: 0;   
+     font-size: 1.3rem;
+     margin: 60px 0 0px 25px;
+    }
+    .divider{
+        margin:20px 20px;
+        padding: 0;
+        position: relative;
+    }
+    
+    .cart-More-mbl
+    {
+        display: block;
+        margin: 0;
+    }
+    .cart-More-mbl{
+        width: 100%;
+    }
+    .foot-total{
+        width: 100%;
+        justify-content: space-around;
+    }
+    .cartMore-box{
+        width: 100%;
+        justify-content: space-around;
+    }
+    .cart-subTotal{
+        padding: 0;
+        margin: 10px 53px 0px 60px;
+    }
+    .cart-VAT{
+        padding: 0;
+        margin: 10px 41px 0px 60px;
+    }
+    .cart-serviceChr{
+        padding: 0;
+        margin: 10px 76px 0 60px;
+    }
+    .cart-delivery{
+        padding: 0;
+        margin: 10px 57px  0 60px;
+    }
+    .cart-grandTotal{
+        padding: 0;
+        margin: 10px 35px 0 50px;
+    }
+    .Order-Details{
+        margin: 0;
+        padding: 0;
+    }
+    .details-box{
+        padding: 0;
+        margin-left: 250px;
+    }
+    .address-box{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .address-text{
+        padding: 0;
+        margin: 0;
+    }
+}
