@@ -84,12 +84,13 @@
         display: none;
     }
     .item-search{
-        width: 100%;
+        width: 70%;
         display: flex;
         gap: 0;
-        justify-content: space-around;
+        justify-content: space-between;
         margin: 0;
         padding: 0;
+        margin-left: 20px;
     }
     .search-input{
         width: 120px;
@@ -101,7 +102,7 @@
         margin-left: 10px;
     }
     .searched-items{
-        width: 100%;
+        width: 80%;
         height: auto;
         margin: 0;
         padding: 0;
@@ -112,5 +113,8 @@
         margin-left: -45px;
         /* margin: 0; */
         padding: 0;
+    }
+    .searchItems-divider{
+        width: 90%;
     }
 }

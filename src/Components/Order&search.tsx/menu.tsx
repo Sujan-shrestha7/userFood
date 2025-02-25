@@ -126,7 +126,7 @@ const Menu: React.FC = () => {
                     </button>
                   </div>
                 </div>
-                <div className="w-[100%] mt-[-15px] h-[1px] bg-[#fff]" />
+                <div className="searchItems-divider w-[100%] mt-[-15px] h-[1px] bg-[#fff]" />
               </div>
             ))}
           </div>
