@@ -13,7 +13,6 @@ interface MenuItem {
 }
 
 const HomeNav: React.FC = () => {
-  const [isToggleOpen, setIsToggleOpen] = useState<boolean>(false);
   const [activeItem, setActiveItem] = useState<string>("Dashboard");
   const [showProfileMenu, setShowProfileMenu] = useState<boolean>(false);
   const navigate = useNavigate();
@@ -42,15 +41,8 @@ const HomeNav: React.FC = () => {
   };
 
   return (
-    <div className="sticky top-0 left-0 right-0 z-50 h-[60px] pt-[5px] w-full bg-[#FFFFFF] shadow-md">
+    <div className="header-all sticky top-0 left-0 right-0 z-50 h-[60px] pt-[5px] w-full bg-[#FFFFFF] shadow-md">
       <div className="allsection flex ml-[100px] gap-[100px] items-center">
-        <button
-          className="hambergur md:hidden"
-          onClick={() => setIsToggleOpen((prev) => !prev)}
-        >
-          {isToggleOpen ? <FiX /> : <FiMenu />}
-        </button>
-
         <div
           className="logosection flex items-center w-[400px] cursor-pointer"
           onClick={() => navigate("/home")}

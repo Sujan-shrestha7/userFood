@@ -34,26 +34,38 @@
         justify-content: space-around;
     }
     .cartMore-box{
-        width: 100%;
+        width: 90%;
         justify-content: space-around;
     }
+    .cart-itemBox{
+        width: 100%;
+        padding-left: 30px;
+    }
     .cart-subTotal{
+        width: 66%;
         padding: 0;
         margin: 10px 53px 0px 60px;
     }
     .cart-VAT{
+        width: 69%;
         padding: 0;
         margin: 10px 41px 0px 60px;
     }
     .cart-serviceChr{
+        width: 59.5%;
         padding: 0;
         margin: 10px 76px 0 60px;
     }
     .cart-delivery{
+        width: 65%;
         padding: 0;
         margin: 10px 57px  0 60px;
     }
+    .cart-divider{
+        width: 100%;
+    }
     .cart-grandTotal{
+        width: 75%;
         padding: 0;
         margin: 10px 35px 0 50px;
     }
@@ -63,7 +75,7 @@
     }
     .details-box{
         padding: 0;
-        margin-left: 250px;
+        margin-left: 50px;
     }
     .address-box{
         width: 100%;
@@ -73,5 +85,66 @@
     .address-text{
         padding: 0;
         margin: 0;
+        font-size: 1rem;
+    }
+    .address-input{
+        width: 250px;
+    }
+    .contact-box{
+        width: 100%;
+        padding: 0;
+        margin: 20px 0;
+    }
+    .contact-text{
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+    }
+    .contact-input{
+        width: 250px;
+    }
+    .delivery-now-box{
+        border-radius: 5px;
+        margin: 5px 0px 0 20px;
+    }
+    .delivery-box{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        }
+    .delivery-text{
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+    }
+    .schedule-box{
+        height: auto;
+        padding: 0;
+        margin: 5px 0 0 20px;
+    }
+    .delivery-schedule{
+        font-size: 1rem;
+        margin: 0;
+        padding: 5px 10px 10px 10px;
+        border-radius: 5px;
+        height: auto;
+        width: 100%;
+    }
+    .schedule-time{
+        margin: 10px 0 0 10px ;
+        padding: 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .time-box{
+        margin-top: 10px;
+    }
+    .dt-input{
+        width: 200px;
+    }
+    .divider-desktop{
+        display: none;
     }
 }

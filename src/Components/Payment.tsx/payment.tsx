@@ -89,7 +89,7 @@ const Payment = () => {
               <p className="font-semibold">Total</p>
             </div>
             {/* Cart Items */}
-            <div className="w-[400px]">
+            <div className="cart-itemBox w-[400px]">
               {myCart.map((item, index) => (
                 <div
                   key={index}
@@ -128,7 +128,7 @@ const Payment = () => {
             </div>
 
             {/* Divider Line */}
-            <div className="h-[2px] mt-[20px] w-[400px] bg-[#ccc] mx-auto" />
+            <div className="cart-divider h-[2px] mt-[20px] w-[400px] bg-[#ccc] mx-auto" />
 
             {/* Grand Total */}
             <div className="cart-grandTotal mt-[10px] flex justify-between font-bold text-lg">
@@ -151,27 +151,27 @@ const Payment = () => {
             <input
               type="text"
               placeholder="Enter your address "
-              className="mt-[10px] ml-[45px] pl-[30px] py-[5px] border rounded-md w-[400px] h-[40px]"
+              className="address-input mt-[10px] ml-[45px] pl-[30px] py-[5px] border rounded-md w-[400px] h-[40px]"
             />
           </div>
 
-          <div className="flex mt-[40px] flex-col gap-y-[10px]">
-            <p className="text-[18px] text-[20px] font-semibold text-[18px] text-[#473F40]">
+          <div className="contact-box flex mt-[40px] flex-col gap-y-[10px]">
+            <p className="contact-text text-[18px] text-[20px] font-semibold text-[18px] text-[#473F40]">
               Contact Number:
             </p>
             <input
               type="number"
               placeholder="Enter your address "
-              className="mt-[10px] ml-[45px] pl-[30px] py-[5px] border rounded-md w-[400px] h-[40px]"
+              className="contact-input mt-[10px] ml-[45px] pl-[30px] py-[5px] border rounded-md w-[400px] h-[40px]"
             />
           </div>
-          <div className="mt-[50px] flex flex-col gap-y-[10px]">
-            <p className="text-[20px] font-semibold text-[#473F40]">
+          <div className="delivery-box mt-[50px] flex flex-col gap-y-[10px]">
+            <p className="delivery-text text-[20px] font-semibold text-[#473F40]">
               Delivery Status:
             </p>
 
             {/* Deliver Now Option */}
-            <label className="flex items-center gap-[10px] mt-[5px] ml-[50px] cursor-pointer">
+            <label className="delivery-now-box flex items-center gap-[10px] mt-[5px] ml-[50px] cursor-pointer">
               <input
                 type="radio"
                 name="deliveryStatus"
@@ -184,28 +184,28 @@ const Payment = () => {
             </label>
 
             {/* Schedule for Later Option */}
-            <label className="flex items-start gap-[10px] mt-[25px] ml-[50px] cursor-pointer">
+            <label className="schedule-box flex items-start gap-[10px] mt-[25px] ml-[50px] cursor-pointer">
               <input
                 type="radio"
                 name="deliveryStatus"
                 value="Schedule for Later"
                 className="form-radio h-4 w-4 text-blue-600 mt-2"
               />
-              <div className="h-[125px] w-[480px] bg-[#F1F1F1] pl-[30px] pt-[10px]">
+              <div className="delivery-schedule h-[125px] w-[480px] bg-[#F1F1F1] pl-[30px] pt-[10px]">
                 <p>Schedule for later</p>
-                <div className="flex justify-between mt-[20px] mx-[40px]">
+                <div className="schedule-time flex justify-between mt-[20px] mx-[40px]">
                   <div className="flex flex-col gap-y-[10px]">
                     <p>Date</p>
                     <input
                       type="date"
-                      className="w-[150px] h-[35px] pl-[5px]"
+                      className="dt-input w-[150px] h-[35px] pl-[5px]"
                     />
                   </div>
-                  <div className="flex flex-col gap-y-[10px]">
+                  <div className="time-box flex flex-col gap-y-[10px]">
                     <p>Time</p>
                     <input
                       type="time"
-                      className="w-[150px] h-[35px] pl-[5px]"
+                      className="dt-input w-[150px] h-[35px] pl-[5px]"
                     />
                   </div>
                 </div>
@@ -238,7 +238,7 @@ const Payment = () => {
           </div>
         </div>
 
-        <div className="h-[420px] w-[2px] rounded-[10px] bg-[#FFFFFF] shadow-lg" />
+        <div className="divider-desktop h-[420px] w-[2px] rounded-[10px] bg-[#FFFFFF] shadow-lg" />
 
         {/* Cart Section for desktop (Fixed width: 420px) */}
         <div className="cart-More-desktop flex ml-[50px]">
