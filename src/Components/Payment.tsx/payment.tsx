@@ -60,10 +60,6 @@ const Payment = () => {
             <div className="h-auto flex items-center justify-between flex-wrap gap-x-[30px] p-[10px] bg-[#fff]">
               {/* Left Section (Image + Text) */}
               <div className="box-img-check flex gap-[5px]">
-                <input
-                  type="checkbox"
-                  className="check-box h-[20px] w-[20px] mt-[6px]"
-                />
                 <div className="flex items-center gap-[20px] pl-[15px] text-[18px]">
                   <img
                     src={d.img}

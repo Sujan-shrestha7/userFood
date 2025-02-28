@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../Navbar.css";
 import search from "../images/search.png";
 import cart from "../images/cart.png";
 import "../css/restaurantFood.css";
@@ -106,42 +105,12 @@ const Menu: React.FC = () => {
           </div>
 
           {/* searched items  */}
-          <div className="searched-items text-[16px] w-[600px] ml-[-30px] mt-[40px]">
-            {food.map((rest, index) => (
+          <div className="searched-items text-[16px] w-[500px] mt-[40px]">
+          {food.map((rest, index) => (
               <div>
                 <div
                   key={index}
-                  className="searchItems-box flex mb-[20px] mt-[20px] justify-between"
-                >
-                  <p>{rest.name}</p>
-                  <div className="flex gap-[20px]">
-                    <p>Rs.{rest.Price}/- </p>
-                    <button className="flex cursor-pointer pt-[8px] mt-[-8px] text-[14px] h-[32px] w-[110px] bg-[#137F13] text-[#fff] text-center rounded-[5px] border-none">
-                      <img
-                        src={cart}
-                        className="w-[22px] h-[13px] mt-[px]"
-                        alt=""
-                      />
-                      <p className="mt-[]">Add To Cart </p>
-                    </button>
-                  </div>
-                </div>
-                <div className="searchItems-divider w-[100%] mt-[-15px] h-[1px] bg-[#fff]" />
-              </div>
-            ))}
-          </div>
-
-          {/* menus items  */}
-
-          <div className="text-[16px] w-[500px] mt-[40px]">
-            <p className="foodstyle text-[18px] ml-[-30px] mb-[40px]">
-              Other Menus
-            </p>
-            {menus.map((rest, index) => (
-              <div>
-                <div
-                  key={index}
-                  className="flex mb-[10px] mt-[25px] w-[550px] text-[#363636] justify-between"
+                  className="other-menuBox flex mb-[10px] mt-[25px] w-[550px] justify-between"
                 >
                   <p>{rest.name}</p>
                   <div className="flex gap-[20px]">
@@ -153,7 +122,34 @@ const Menu: React.FC = () => {
                   </div>
                 </div>
                 {/* divider line */}
-                <div className="w-[110%] mt-[-5px] h-[1px] bg-[#E5E5E5]" />
+                <div className="w-[100%] mt-[-5px] h-[1px] bg-[#E5E5E5]" />
+              </div>
+            ))}
+          </div>
+
+          {/* menus items  */}
+
+          <div className="other-menus text-[16px] w-[500px] mt-[40px]">
+            <p className="foodstyle text-[18px] ml-[-30px] mb-[40px]">
+              Other Menus
+            </p>
+            {menus.map((rest, index) => (
+              <div>
+                <div
+                  key={index}
+                  className="other-menuBox flex mb-[10px] mt-[25px] w-[550px] text-[#363636] justify-between"
+                >
+                  <p>{rest.name}</p>
+                  <div className="flex gap-[20px]">
+                    <p>Rs.{rest.Price}/- </p>
+                    <button className="flex cursor-pointer pt-[8px] mt-[-8px] text-[14px] h-[32px] w-[110px] bg-[#137F13] text-[#fff] text-center rounded-[5px] border-none">
+                      <img src={cart} className="w-[22px] h-[13px]" alt="" />
+                      <p className="mt-[]">Add To Cart </p>
+                    </button>
+                  </div>
+                </div>
+                {/* divider line */}
+                <div className="w-[100%] mt-[-5px] h-[1px] bg-[#E5E5E5]" />
               </div>
             ))}
           </div>
@@ -163,7 +159,7 @@ const Menu: React.FC = () => {
         <div className=" h-auto ml-[-80px] w-[2px] bg-[#fff]" />
 
         {/* cart  */}
-        <div className="ml-[-20px]">
+        <div className="menu-cart ml-[-20px]">
           <p className="foodstyle text-center ">My Cart</p>
           <div className="flex justify-between mt-[50px] w-[250px] mb-[30px]">
             <p>Foods</p>

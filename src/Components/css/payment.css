@@ -72,6 +72,7 @@
     .Order-Details{
         margin: 0;
         padding: 0;
+        margin-left: -20px;
     }
     .details-box{
         padding: 0;
@@ -129,6 +130,7 @@
         border-radius: 5px;
         height: auto;
         width: 100%;
+        margin-right: 20px;
     }
     .schedule-time{
         margin: 10px 0 0 10px ;

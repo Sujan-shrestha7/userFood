@@ -34,6 +34,7 @@ const Footer = () => {
         <div className="view-cities mt-[-15px] text-[18px] text-[#fff] ml-[740px] flex flex-wrap">
           <p>View All Cities</p>
         </div>
+        {/* divider */}
         <div className="divider-line h-[1px] w-[90%] bg-[#fff] ml-[5%] mt-[60px]"></div>
         <div className="termss">
         <div className="view-terms relative ml-[1110px] mt-[20px] text-[14px] text-[#fff] flex flex-wrap gap-[70px]">
@@ -41,7 +42,7 @@ const Footer = () => {
           <p>Privacy Policy</p>
         </div>
         <div className="copyright ml-[40%] mt-[25px] text-[12px] text-[#fff]">
-          ©2024 Emerge Infosys Pvt. Ltd. All rights reserved
+          ©2024 Xittoo Tech All rights reserved
         </div>
       </div>
       </div>

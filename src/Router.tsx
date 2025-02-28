@@ -8,6 +8,7 @@ import Cart from "./Components/dashboard/Cart";
 import Payment from "./Components/Payment.tsx/payment";
 import HomeNav from "./Components/homeNav";
 import Footer from "./Components/Footer";
+import LoginForm from "./Components/dashboard/loginForm";
 
 const Router: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const Router: React.FC = () => {
           <Route path="payment/" element={<Payment/>} />
           <Route path="homenavbar/" element={<HomeNav/>} />
           <Route path="footer/" element={<Footer/>} />
+          <Route path="login/" element={<LoginForm/>} />
           
         </Routes>
       </BrowserRouter>
