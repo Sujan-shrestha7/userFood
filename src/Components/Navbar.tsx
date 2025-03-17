@@ -38,7 +38,7 @@ const Navbar = () => {
           <button className="AddRes h-[40px] w-[150px] text-[#473F40] text-[16px] font-bold bg-[#FFFFFF] border-none cursor-pointer">
             Add Restaurant
           </button>
-          <button className="h-[40px] w-[120px] bg-[#581818] text-[14px] text-[#fff] border-none cursor-pointer" onClick={() => navigate("home/")}>
+          <button className="h-[40px] w-[120px] bg-[#581818] text-[14px] text-[#fff] border-none cursor-pointer" onClick={() => navigate("login/")}>
             Login
           </button>
         </div>

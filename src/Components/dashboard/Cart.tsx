@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import HomeNav from "../homeNav";
 import search from "..//images/search.png";
 import resimg from "../images/vip.png";
@@ -8,13 +8,15 @@ import remove from '../images/removee.webp'
 import '../css/cart.css';
 
 
-const Cart = () => {
+const Cart:React.FC = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const navigate =useNavigate();
 
   const toggleExpand = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
+    setExpandedIndex(expandedIndex === index? null : index);
+    
   };
+  
   const details = [
     {
       img: resimg,

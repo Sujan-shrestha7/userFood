@@ -1,4 +1,3 @@
-import React from "react";
 import homeImg from "../images/homeImg.png";
 import search from "../images/search.png";
 import download from "../images/download.png";
@@ -185,6 +184,7 @@ const Home = () => {
         <p className="todayspecial-intro w-full text-center text-[36px]">
           Today's special
         </p>
+        
         <div
           className="todays-result pt-[60px] pl-[160px] flex flex-wrap gap-[25px]"
           onClick={() => navigate("result/")}

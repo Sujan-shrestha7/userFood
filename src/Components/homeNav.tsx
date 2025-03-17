@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
 import logo from "./images/logo.png";
 import cart from "./images/cart.png";
 import notification from "./images/notification.png";

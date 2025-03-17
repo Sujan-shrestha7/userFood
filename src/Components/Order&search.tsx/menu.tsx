@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import search from "../images/search.png";
 import cart from "../images/cart.png";
 import "../css/restaurantFood.css";
