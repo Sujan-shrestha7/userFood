@@ -96,6 +96,12 @@ const LoginForm = () => {
                 className="w-[300px] h-[35px] border px-[10px] py-2 rounded-[5px] outline-none focus:ring-2 focus:ring-blue-400"
               />
             </label>
+            <div className="flex justify-between">
+              <label htmlFor="" className="flex gap-[5px]">
+            <input type="checkbox"/> <p className="text-[16px]">Remember me</p>
+              </label>
+              <p><a href="" className="text-[16px]"> Forgot Password?</a></p>
+            </div>
           </div>
           <button
             onClick={handleSubmit}
@@ -103,6 +109,7 @@ const LoginForm = () => {
           >
             Submit
           </button>
+          <p>Don't have an Account?<a href=""> Sign Up</a></p>
         </div>
       </div>
     </div>
