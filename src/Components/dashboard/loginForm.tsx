@@ -107,9 +107,9 @@ const LoginForm = () => {
             onClick={handleSubmit}
             className="h-[32px] w-[130px] bg-[#000000] hover:bg-[#fff] text-[#fff] hover:text-[#000000] rounded-[5px] cursor-pointer"
           >
-            Submit
+            Login
           </button>
-          <p>Don't have an Account?<a href=""> Sign Up</a></p>
+          <p>Don't have an Account?<a href="" onClick={() => navigate("/register")}> Sign Up</a></p>
         </div>
       </div>
     </div>

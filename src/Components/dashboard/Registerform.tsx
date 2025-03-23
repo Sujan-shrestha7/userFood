@@ -46,7 +46,7 @@ const Registerform = () => {
       }
 
       await response.json();
-      alert("Register successful!");
+      alert("Registration successful!");
       navigate("/login");
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -58,17 +58,17 @@ const Registerform = () => {
     <div className="p-[7%] px-[20%]">
       <div className="flex flex-wrap h-[500px] border-2 border-black shadow-xl rounded-lg overflow-hidden">
         {/* Form Section */}
-        <div className="flex flex-1 flex-col items-center justify-center bg-gray-100 p-6 gap-[30px]">
+        <div className="flex flex-1 flex-col items-center justify-center bg-gray-100 p-6 gap-[20px]">
           <p className="text-[24px] font-bold">Login Page</p>
-          <div className="flex flex-col gap-[25px]">
+          <div className="flex flex-col gap-[15px]">
             <label
-              htmlFor="contact"
-              className="flex flex-col gap-[15px] w-full max-w-[500px]"
+              htmlFor="fullname"
+              className="flex flex-col gap-[10px] w-full max-w-[500px]"
             >
               <p className="mb-2 text-lg font-medium">Enter Your Full Name:</p>
               <input
                 type="text"
-                id="contact"
+                id="fullname"
                 placeholder="Enter Your Full Name"
                 value={fullname}
                 onChange={(e) => setFullname(e.target.value)}
@@ -76,13 +76,13 @@ const Registerform = () => {
               />
             </label>
             <label
-              htmlFor="contact"
-              className="flex flex-col gap-[15px] w-full max-w-[500px]"
+              htmlFor="address"
+              className="flex flex-col gap-[10px] w-full max-w-[500px]"
             >
               <p className="mb-2 text-lg font-medium">Enter Your Address:</p>
               <input
                 type="text"
-                id="contact"
+                id="address"
                 placeholder="Enter Your Address"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
@@ -107,7 +107,7 @@ const Registerform = () => {
             </label>
             <label
               htmlFor="password"
-              className="flex flex-col gap-[15px] w-full max-w-[500px]"
+              className="flex flex-col gap-[10px] w-full max-w-[500px]"
             >
               <p className="mb-2 text-lg font-medium">Enter Your Password:</p>
               <input
@@ -124,8 +124,9 @@ const Registerform = () => {
             onClick={handleSubmit}
             className="h-[32px] w-[130px] bg-[#000000] hover:bg-[#fff] text-[#fff] hover:text-[#000000] rounded-[5px] cursor-pointer"
           >
-            Submit
+            Register
           </button>
+          <p>Already have an Account?<a href="" onClick={() => navigate("/login")}> Sign In</a></p>
         </div>
         {/* Image Section */}
         <div className="flex-shrink-0">
