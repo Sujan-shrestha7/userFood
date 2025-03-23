@@ -10,6 +10,7 @@ import HomeNav from "./Components/homeNav";
 import Footer from "./Components/Footer";
 // import LoginForm from "./Components/dashboard/loginForms";
 import LoginForm from "./Components/dashboard/loginForm";
+import Registerform from "./Components/dashboard/Registerform";
 
 const Router: React.FC = () => {
   return (
@@ -17,6 +18,8 @@ const Router: React.FC = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="login/" element={<LoginForm/>} />
+          <Route path="/register" element={<Registerform/>} />
           <Route path="/home" element={<Home />} />
           <Route path="result/" element={<SearchResults/>} />
           <Route path="home/result/" element={<SearchResults/>} />
@@ -25,7 +28,6 @@ const Router: React.FC = () => {
           <Route path="payment/" element={<Payment/>} />
           <Route path="homenavbar/" element={<HomeNav/>} />
           <Route path="footer/" element={<Footer/>} />
-          <Route path="login/" element={<LoginForm/>} />
           
         </Routes>
       </BrowserRouter>
