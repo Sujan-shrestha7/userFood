@@ -67,7 +67,11 @@ const HomeNav: React.FC = () => {
           </div>
 
           <div className="rounded-full h-[40px] w-[40px] bg-[#D9D9D9] cursor-pointer flex items-center justify-center">
-            <img src={notification} className="h-[25px] w-[23px]" alt="Notification" />
+            <img
+              src={notification}
+              className="h-[25px] w-[23px]"
+              alt="Notification"
+            />
           </div>
 
           <div className="profile-icon relative mr-[-100px]">
@@ -81,13 +85,22 @@ const HomeNav: React.FC = () => {
             {showProfileMenu && (
               <div className="pl-[20px] absolute right-[-40px] mt-[10px] w-[200px] h-[300px] bg-[#636363] text-[#fff] text-[18px] shadow-lg rounded-[10px] flex flex-col justify-between">
                 <ul className="text-white mt-[20px]">
-                  <li className="p-2 mt-[20px] cursor-pointer hover:bg-gray-700 list-none" onClick={() => navigate("/profile")}>
+                  <li
+                    className="p-2 mt-[20px] cursor-pointer hover:bg-gray-700 list-none"
+                    onClick={() => navigate("/profile")}
+                  >
                     {username}
                   </li>
-                  <li className="p-2 mt-[20px] cursor-pointer hover:bg-gray-700 list-none" onClick={() => navigate("/profile")}>
+                  <li
+                    className="p-2 mt-[20px] cursor-pointer hover:bg-gray-700 list-none"
+                    onClick={() => navigate("/profile")}
+                  >
                     View Profile
                   </li>
-                  <li className="p-2 mt-[10px] cursor-pointer hover:bg-gray-700 list-none" onClick={() => navigate("/settings")}>
+                  <li
+                    className="p-2 mt-[10px] cursor-pointer hover:bg-gray-700 list-none"
+                    onClick={() => navigate("/settings")}
+                  >
                     Settings
                   </li>
                 </ul>

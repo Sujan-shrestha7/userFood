@@ -88,7 +88,7 @@ const LoginForm = () => {
             >
               <p className="mb-2 text-lg font-medium">Enter Your Password:</p>
               <input
-                type="text"
+                type="password"
                 id="password"
                 placeholder="Enter Your password"
                 value={password}
