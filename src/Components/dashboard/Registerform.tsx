@@ -27,7 +27,7 @@ const Registerform = () => {
       password,
     };
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/register/", {
+      const response = await fetch("http://127.0.0.1:8000/users/register/", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
