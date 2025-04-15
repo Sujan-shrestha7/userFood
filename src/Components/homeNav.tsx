@@ -15,8 +15,7 @@ const HomeNav: React.FC = () => {
   const [activeItem, setActiveItem] = useState<string>("Dashboard");
   const [showProfileMenu, setShowProfileMenu] = useState<boolean>(false);
   const navigate = useNavigate();
-
-  const username: string = "sujan_12";
+  let name = localStorage.getItem('name')
 
   const menuItems: MenuItem[] = [
     { name: "Dashboard", path: "/home" },
@@ -89,7 +88,7 @@ const HomeNav: React.FC = () => {
                     className="p-2 mt-[20px] cursor-pointer hover:bg-gray-700 list-none"
                     onClick={() => navigate("/profile")}
                   >
-                    {username}
+                    {name}
                   </li>
                   <li
                     className="p-2 mt-[20px] cursor-pointer hover:bg-gray-700 list-none"
