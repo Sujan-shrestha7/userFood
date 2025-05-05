@@ -18,8 +18,7 @@ import location from "../images/location.png";
 import vipth from "../images/vipth.png";
 import rightsidebar from "../images/rigthside.png";
 import leftsidebar from "../images/leftside.png";
-import { useState,useEffect } from "react";
-
+import { useState, useEffect } from "react";
 
 interface Category {
   id: number;
@@ -84,8 +83,6 @@ const Home = () => {
     { name: "Pizza", remaining: "8 days remaining" },
   ];
 
-  
-
   const fetchCategory = async (): Promise<void> => {
     try {
       const response = await fetch(`http://127.0.0.1:8000/category/category/`);
@@ -95,9 +92,9 @@ const Home = () => {
       console.log("Failed to fetch categories:", error);
     }
   };
-  useEffect(()=>{
+  useEffect(() => {
     fetchCategory();
-  },[]);
+  }, []);
   // Helper function to generate stars based on rating
   const renderStars = (rating: number) => {
     const fullStars = Math.floor(rating);
@@ -112,7 +109,6 @@ const Home = () => {
       </div>
     );
   };
-
 
   return (
     <div>
@@ -177,16 +173,16 @@ const Home = () => {
             <div className="categories-list flex gap-[25px] justify-center">
               {categories.map((C) => (
                 <div
-                key={C.id}
-                onClick={()=>navigate('/top-category')}
-                  className="top-categories min-w-[180px] h-[170px] bg-[#fff] flex flex-col items-center justify-center shadow-md rounded-[20px] cursor-pointer"
+                  key={C.id}
+                  onClick={() => navigate("/top-category")}
+                  className="top-categories flex flex-col items-center justify-center shadow-md cursor-pointer"
                 >
                   <img
                     src={`http://127.0.0.1:8000/${C.image}`}
-                    className="img-categories w-[150px] h-[130px] rounded-[10px] bg-transparent"
+                    className="img-categories w-[150px] h-[130px] rounded-[50%] bg-transparent"
                     alt=""
                   />
-                  <p className="categories-name  text-lg font-semibold">
+                  <p className="categories-name mt-[10px] text-lg font-semibold">
                     {C.cat_name}
                   </p>
                 </div>
@@ -207,7 +203,7 @@ const Home = () => {
         <p className="todayspecial-intro w-full text-center text-[36px]">
           Today's special
         </p>
-        
+
         <div
           className="todays-result pt-[60px] pl-[160px] flex flex-wrap gap-[25px]"
           onClick={() => navigate("result/")}
@@ -367,7 +363,7 @@ const Home = () => {
           </div>
         </div>
 
-{/* for desktop view */}
+        {/* for desktop view */}
         <div className="fordesktop-view mt-[80px] bg-fixed flex justify-center">
           <div className="install-app flex flex-row w-full max-w-screen-lg justify-center relative">
             <div className="mbl-app ml-[160px] z-10 relative">
@@ -408,7 +404,7 @@ const Home = () => {
             </div>
           </div>
         </div>
- {/* for mobile view */}
+        {/* for mobile view */}
         <div className="formobileview mt-[80px] bg-fixed flex justify-center">
           <div className="install-app flex flex-row w-full max-w-screen-lg justify-center relative">
             <div className=" flex flex-col justify-start mt-[90px] z-80 relative">
@@ -420,34 +416,34 @@ const Home = () => {
                 />
               </div>
               <div className="install-app-msg">
-              <div className="">
-                <h1 className="text-[32px] text-[#F17228] ml-[10px]">
-                  Install Our App
-                </h1>
-                <p className="text-[15px] mt-[10px] ml-[10px]">
-                  "Fresh flavors, warm ambiance, unforgettable moments, <br />
-                  crafted with love."
-                </p>
-              </div>
+                <div className="">
+                  <h1 className="text-[32px] text-[#F17228] ml-[10px]">
+                    Install Our App
+                  </h1>
+                  <p className="text-[15px] mt-[10px] ml-[10px]">
+                    "Fresh flavors, warm ambiance, unforgettable moments, <br />
+                    crafted with love."
+                  </p>
+                </div>
 
-              <div className="flex md:mb-[10px] justify-center flex-row">
-                <img
-                  className="ml-[25px] md:w-[110px] md:h-[40px] mt-[20px] cursor-pointer"
-                  src={PlayStore}
-                  alt="Play Store"
-                />
-                <img
-                  className="ml-[10px] md:w-[110px] md:h-[40px] mt-[20px] cursor-pointer"
-                  src={AppleStore}
-                  alt="Apple Store"
-                />
+                <div className="flex md:mb-[10px] justify-center flex-row">
+                  <img
+                    className="ml-[25px] md:w-[110px] md:h-[40px] mt-[20px] cursor-pointer"
+                    src={PlayStore}
+                    alt="Play Store"
+                  />
+                  <img
+                    className="ml-[10px] md:w-[110px] md:h-[40px] mt-[20px] cursor-pointer"
+                    src={AppleStore}
+                    alt="Apple Store"
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-{/* list restaurant */}
+      {/* list restaurant */}
       <div className="list-restaur h-[300px] pt-[80px] pl-[170px] w-full bg-[#EBEBEB]">
         <p className="text-[26px] font-bold  ">
           "List your restaurant with us and connect with 10,000+ customers,
