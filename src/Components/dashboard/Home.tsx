@@ -175,13 +175,13 @@ const Home = () => {
           </div>
           <div className="slidebar w-[1000px] overflow-x-auto">
             <div className="categories-list flex gap-[30px] justify-center">
-              {categories.map((C, index) => (
+              {categories.map((C) => (
                 <div
-                  key={index}
+                key={C.id}
                   className="top-categories min-w-[180px] h-[170px] bg-[#fff] flex flex-col items-center justify-center shadow-md rounded-[20px]"
                 >
                   <img
-                    src={`http://127.0.0.1:8000//${C.image}`}
+                    src={`http://127.0.0.1:8000/${C.image}`}
                     className="img-categories w-[140px] h-[130px] bg-transparent"
                     alt=""
                   />
