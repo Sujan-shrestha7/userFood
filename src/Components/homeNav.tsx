@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "./images/logo.png";
+import logo from "../../../logo.png";
 import cart from "./images/cart.png";
 import notification from "./images/notification.png";
 import profile from "./images/profile.png";
@@ -12,31 +12,21 @@ interface MenuItem {
 }
 
 const HomeNav: React.FC = () => {
-  const [activeItem, setActiveItem] = useState<string>("Dashboard");
   const [showProfileMenu, setShowProfileMenu] = useState<boolean>(false);
+  // const[categories, setCategory] = useState<>;
   const navigate = useNavigate();
   let name = localStorage.getItem('name')
-
-  const menuItems: MenuItem[] = [
-    { name: "Dashboard", path: "/home" },
-    { name: "Orders", path: "/order" },
-    { name: "Account & Payments", path: "/A&P" },
-    { name: "Delivery", path: "/delivery" },
-  ];
-
-  useEffect(() => {
-    const currentPath: string = window.location.pathname;
-    const currentItem: MenuItem | undefined = menuItems.find(
-      (item) => item.path === currentPath
-    );
-    if (currentItem) {
-      setActiveItem(currentItem.name);
-    }
-  }, []);
 
   const toggleProfileMenu = (): void => {
     setShowProfileMenu((prev) => !prev);
   };
+const logoutBtn = ()=>{
+  localStorage.clear();
+navigate("/")
+}
+
+// const getCategory = 
+
 
   return (
     <div className="header-all sticky top-0 left-0 right-0 z-50 h-[60px] pt-[5px] w-full bg-[#FFFFFF] shadow-md">
@@ -45,8 +35,8 @@ const HomeNav: React.FC = () => {
           className="logosection flex items-center w-[400px] cursor-pointer"
           onClick={() => navigate("/home")}
         >
-          <img src={logo} alt="Logo" className="xittoLogo h-[50px] w-[50px]" />
-          <p className="xittoofood text-[32px] pl-[12px]">XittooFood</p>
+          <img src={logo} alt="Logo" className="xittoLogo h-[50px] w-[150px]" />
+          {/* <p className="xittoofood text-[32px] pl-[12px]">XittooFood</p> */}
         </div>
 
         <div className="description flex text-[#473F40] w-[350px] items-center justify-center ml-[-40px]">
@@ -103,7 +93,7 @@ const HomeNav: React.FC = () => {
                     Settings
                   </li>
                 </ul>
-                <li className="p-2 mb-[50px] mt-[20px] cursor-pointer hover:bg-gray-700 list-none ml-[-20px] text-center">
+                <li onClick={logoutBtn} className="p-2 mb-[50px] mt-[20px] cursor-pointer hover:bg-gray-700 list-none ml-[-20px] text-center">
                   Logout
                 </li>
               </div>

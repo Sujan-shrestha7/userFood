@@ -11,7 +11,6 @@ import liveTrack from "../images/livetrack.png";
 import mblApp from "../images/mblApp.png";
 import backMblApp from "../images/backmblApp.png";
 import discount from "../images/discount.png";
-import categories from "../images/categories.png";
 import Footer from "../Footer";
 import HomeNav from "../homeNav";
 import { useNavigate } from "react-router-dom";
@@ -19,9 +18,17 @@ import location from "../images/location.png";
 import vipth from "../images/vipth.png";
 import rightsidebar from "../images/rigthside.png";
 import leftsidebar from "../images/leftside.png";
+import { useState,useEffect } from "react";
 
+
+interface Category {
+  id: number;
+  cat_name: string;
+  image?: string;
+}
 const Home = () => {
   const navigate = useNavigate();
+  const [categories, setCategories] = useState<Category[]>([]);
 
   const fullhrres = [
     {
@@ -61,15 +68,15 @@ const Home = () => {
       rating: 3.5,
     },
   ];
-  const Categories = [
-    { name: "Traditional Nepali", img: categories },
-    { name: "Newari cousine", img: categories },
-    { name: "Tibetan & Himalayan Cuisine", img: categories },
-    { name: "Sweets & Desserts", img: categories },
-    { name: "Japnese", img: categories },
-    { name: "Biryani", img: categories },
-    { name: "Indian cousine", img: categories },
-  ];
+  // const Categories = [
+  //   { name: "Traditional Nepali", img: categories },
+  //   { name: "Newari cousine", img: categories },
+  //   { name: "Tibetan & Himalayan Cuisine", img: categories },
+  //   { name: "Sweets & Desserts", img: categories },
+  //   { name: "Japnese", img: categories },
+  //   { name: "Biryani", img: categories },
+  //   { name: "Indian cousine", img: categories },
+  // ];
   const results = [
     { name: "Vera pizza", remaining: "8 days remaining" },
     { name: " Chicken Pizza", remaining: "8 days remaining" },
@@ -77,6 +84,20 @@ const Home = () => {
     { name: "Pizza", remaining: "8 days remaining" },
   ];
 
+  
+
+  const fetchCategory = async (): Promise<void> => {
+    try {
+      const response = await fetch(`http://127.0.0.1:8000/category/category/`);
+      const data = await response.json();
+      setCategories(data);
+    } catch (error) {
+      console.log("Failed to fetch categories:", error);
+    }
+  };
+  useEffect(()=>{
+    fetchCategory();
+  },[]);
   // Helper function to generate stars based on rating
   const renderStars = (rating: number) => {
     const fullStars = Math.floor(rating);
@@ -91,6 +112,7 @@ const Home = () => {
       </div>
     );
   };
+
 
   return (
     <div>
@@ -153,18 +175,18 @@ const Home = () => {
           </div>
           <div className="slidebar w-[1000px] overflow-x-auto">
             <div className="categories-list flex gap-[30px] justify-center">
-              {Categories.map((C, index) => (
+              {categories.map((C, index) => (
                 <div
                   key={index}
                   className="top-categories min-w-[180px] h-[170px] bg-[#fff] flex flex-col items-center justify-center shadow-md rounded-[20px]"
                 >
                   <img
-                    src={C.img}
+                    src={`http://127.0.0.1:8000//${C.image}`}
                     className="img-categories w-[140px] h-[130px] bg-transparent"
                     alt=""
                   />
                   <p className="categories-name  text-lg font-semibold">
-                    {C.name}
+                    {C.cat_name}
                   </p>
                 </div>
               ))}
