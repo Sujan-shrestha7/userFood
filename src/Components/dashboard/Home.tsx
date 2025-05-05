@@ -170,7 +170,7 @@ const Home = () => {
             />
           </div>
           <div className="slidebar w-[1000px] overflow-x-auto">
-            <div className="categories-list flex gap-[25px] justify-center">
+            <div className="ml-[300px] categories-list flex gap-[25px] justify-center">
               {categories.map((C) => (
                 <div
                   key={C.id}
