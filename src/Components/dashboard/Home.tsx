@@ -178,6 +178,7 @@ const Home = () => {
               {categories.map((C) => (
                 <div
                 key={C.id}
+                onClick={()=>navigate('/top-category')}
                   className="top-categories min-w-[180px] h-[170px] bg-[#fff] flex flex-col items-center justify-center shadow-md rounded-[20px] cursor-pointer"
                 >
                   <img
