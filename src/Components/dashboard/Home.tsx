@@ -25,9 +25,20 @@ interface Category {
   cat_name: string;
   image?: string;
 }
+interface Food {
+  id: number;
+  foodname: string;
+  category: Category;
+  fullprice: number;
+  cat_name: string;
+  discount: number;
+  image?: string;
+}
+
 const Home = () => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState<Category[]>([]);
+  const [foods, setFoods] = useState<Food[]>([]);
 
   const fullhrres = [
     {
@@ -76,6 +87,22 @@ const Home = () => {
   //   { name: "Biryani", img: categories },
   //   { name: "Indian cousine", img: categories },
   // ];
+
+  const fetchFoods = async (): Promise<void> => {
+    try {
+      const response = await fetch(`http://127.0.0.1:8000/food/foods/`);
+      const data = await response.json();
+      console.log(data);
+      setFoods(data);
+    } catch (error) {
+      console.log("Failed to fetch foods:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchFoods();
+  }, []);
+
   const results = [
     { name: "Vera pizza", remaining: "8 days remaining" },
     { name: " Chicken Pizza", remaining: "8 days remaining" },
@@ -170,7 +197,7 @@ const Home = () => {
             />
           </div>
           <div className="slidebar w-[1000px] overflow-x-auto">
-            <div className="ml-[300px] categories-list flex gap-[25px] justify-center">
+            <div className="ml-[330px] categories-list flex gap-[35px] justify-center">
               {categories.map((C) => (
                 <div
                   key={C.id}
@@ -179,7 +206,7 @@ const Home = () => {
                 >
                   <img
                     src={`http://127.0.0.1:8000/${C.image}`}
-                    className="img-categories w-[150px] h-[130px] rounded-[50%] bg-transparent"
+                    className="img-categories w-[160px] h-[140px] rounded-[50%] bg-transparent"
                     alt=""
                   />
                   <p className="categories-name mt-[10px] text-lg font-semibold">
@@ -208,28 +235,30 @@ const Home = () => {
           className="todays-result pt-[60px] pl-[160px] flex flex-wrap gap-[25px]"
           onClick={() => navigate("result/")}
         >
-          {results.map((result, index) => (
+          {foods.map((result, index) => (
             <div key={index} className="cursor-pointer">
-              <div className="today-box h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative overflow-hidden">
-                <div className="today-offers absolute h-[70px] w-[100px] top-[180px] text-[#fff] bg-[#D1A815] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
-                  <div className="flex mt-[10px] ml-[10px]">
-                    <p className="discount-num text-[36px] font-bold">15</p>
-                    <p className="discount-percentage">
-                      % <span className="discount-off text-[18px] ">Off</span>
+              <div className="today-box h-[200px] w-[240px] bg-[#000000] rounded-[30px] relative overflow-hidden">
+                <div className="today-offers absolute h-[60px] w-[75px] top-[150px] text-[#fff] bg-[#D1A815] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
+                  <div className="flex ml-[10px]">
+                    <p className="discount-num text-[28px] mt-[10px] font-bold">
+                      {Math.floor(result.discount)}
+                    </p>
+                    <p className="discount-percentage text-[14px] mt-[10px]">
+                      Rs <span className="discount-off text-[16px] ">Off</span>
                     </p>
                   </div>
                 </div>
                 <img
-                  src={food}
+                  src={`http://127.0.0.1:8000//${result.image}`}
                   className="h-full w-full object-cover"
                   alt="Food"
                 />
               </div>
               <p className="HomefoodName text-[22px] pl-[35px] pt-[15px] font-[Righteous-Regular, sans-serif] ">
-                {result.name}
+                {result.foodname}
               </p>
               <p className="special-remaining w-[180px] h-[35px] bg-[#FFE6D9] text-[#F17228] text-center ml-[30px] mt-[15px] pt-[5px] rounded-[8px] shadow-lg">
-                {result.remaining}
+                5 days remaining
               </p>
             </div>
           ))}
@@ -242,7 +271,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* top categories */}
+      {/*24/7 opened restaurants */}
       <div className=" w-full h-[500px] p-[70px] bg-[#F2F2F2]">
         <p className="alltime-open-intro w-full text-center text-[32px]">
           24/7 opened restaurant
@@ -256,7 +285,7 @@ const Home = () => {
             />
           </div>
           <div className="slidebar w-[1000px] overflow-x-auto ">
-            <div className="alltime-res flex gap-x-[30px] justify-center">
+            <div className="alltime-res ml-[290px] flex gap-x-[30px] justify-center">
               {fullhrres.map((f, index) => (
                 <div>
                   <div
