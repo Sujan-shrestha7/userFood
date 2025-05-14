@@ -284,8 +284,8 @@ const Home = () => {
               alt=""
             />
           </div>
-          <div className="slidebar w-[1000px] overflow-x-auto ">
-            <div className="alltime-res ml-[290px] flex gap-x-[30px] justify-center">
+          <div className="slidebar w-[1200px] overflow-x-auto ">
+            <div className="alltime-res ml-[200px] flex gap-x-[30px] justify-center">
               {fullhrres.map((f, index) => (
                 <div>
                   <div
