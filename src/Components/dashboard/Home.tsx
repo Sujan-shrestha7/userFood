@@ -1,7 +1,6 @@
 import homeImg from "../images/homeImg.png";
 import search from "../images/search.png";
 import download from "../images/download.png";
-import food from "../images/food.png";
 import icon from "../images/ricon.png";
 import bgimg from "../images/bgimg.png";
 import PlayStore from "../images/playStore.png";
@@ -25,6 +24,7 @@ interface Category {
   cat_name: string;
   image?: string;
 }
+
 interface Food {
   id: number;
   foodname: string;
@@ -78,15 +78,6 @@ const Home = () => {
       rating: 3.5,
     },
   ];
-  // const Categories = [
-  //   { name: "Traditional Nepali", img: categories },
-  //   { name: "Newari cousine", img: categories },
-  //   { name: "Tibetan & Himalayan Cuisine", img: categories },
-  //   { name: "Sweets & Desserts", img: categories },
-  //   { name: "Japnese", img: categories },
-  //   { name: "Biryani", img: categories },
-  //   { name: "Indian cousine", img: categories },
-  // ];
 
   const fetchFoods = async (): Promise<void> => {
     try {
@@ -103,13 +94,6 @@ const Home = () => {
     fetchFoods();
   }, []);
 
-  const results = [
-    { name: "Vera pizza", remaining: "8 days remaining" },
-    { name: " Chicken Pizza", remaining: "8 days remaining" },
-    { name: "Pizza", remaining: "8 days remaining" },
-    { name: "Pizza", remaining: "8 days remaining" },
-  ];
-
   const fetchCategory = async (): Promise<void> => {
     try {
       const response = await fetch(`http://127.0.0.1:8000/category/category/`);
@@ -122,6 +106,7 @@ const Home = () => {
   useEffect(() => {
     fetchCategory();
   }, []);
+
   // Helper function to generate stars based on rating
   const renderStars = (rating: number) => {
     const fullStars = Math.floor(rating);
@@ -197,11 +182,11 @@ const Home = () => {
             />
           </div>
           <div className="slidebar w-[1000px] overflow-x-auto">
-            <div className="ml-[330px] categories-list flex gap-[35px] justify-center">
+            <div className="ml-auto categories-list flex gap-[35px] justify-center">
               {categories.map((C) => (
                 <div
+                onClick={() => navigate(`/top-category?category=${C.cat_name}`)}
                   key={C.id}
-                  onClick={() => navigate("/top-category")}
                   className="top-categories flex flex-col items-center justify-center shadow-md cursor-pointer"
                 >
                   <img

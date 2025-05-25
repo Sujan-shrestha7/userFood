@@ -1,74 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HomeNav from "../homeNav";
 import search from "../images/search.png";
-import food from "../images/food.png";
 import location from "../images/location.png";
 import Footer from "../Footer";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 import '../css/searchitem.css';
+
+
+interface Food {
+  id: number;
+  foodname: string;
+  category: Category;
+  fullprice: number;
+  cat_name: string;
+  discount: number;
+  image?: string;
+}
+
+interface Category {
+  id: number;
+  cat_name: string;
+}
 
 const Topcategory: React.FC = () => {
   const navigate = useNavigate();
-  const results = [
-    {
-      name: "Vera pizza",
-      resName: "Pasa Voj",
-      Location: "Durbarmarg",
-      img: food,
-      rating: 4.5,
-    },
-    {
-      name: "Pizza",
-      resName: "Pasa Voj",
-      Location: "Banepa-7",
-      img: food,
-      rating: 4.0,
-    },
-    {
-      name: "Pizza",
-      resName: "Pasa Voj",
-      Location: "Durbarmarg",
-      img: food,
-      rating: 3.8,
-    },
-    {
-      name: "Pizza",
-      resName: "Pasa Voj",
-      Location: "Durbarmarg",
-      img: food,
-      rating: 5.0,
-    },
-    {
-      name: "Pizza",
-      resName: "VIP Thakali",
-      Location: "Banepa buspark, Banepa",
-      img: food,
-      rating: 4.2,
-    },
-    {
-      name: "Pizza",
-      resName: "VIP Thakali",
-      Location: "Banepa buspark, Banepa",
-      img: food,
-      rating: 3.5,
-    },
-    {
-      name: "Pizza",
-      resName: "VIP Thakali",
-      Location: "Banepa buspark, Banepa",
-      img: food,
-      rating: 4.7,
-    },
-    {
-      name: "Pizza",
-      resName: "VIP Thakali",
-      Location: "Banepa buspark, Banepa",
-      img: food,
-      rating: 4.1,
-    },
-  ];
+  const locationRouter = useLocation();
+  const queryParams = new URLSearchParams(locationRouter.search);
+  const category = queryParams.get("category");
 
-  // Helper function to generate stars based on rating
+  const [results, setResults] = useState<Food[]>([]);
+
+  useEffect(() => {
+    if (category) {
+      axios
+        .get(`http://127.0.0.1:8000/food/foods/?category=${category}`)
+        .then((res) => setResults(res.data))
+        .catch((err) => console.error("Error fetching foods:", err));
+    }
+  }, [category]);
+
   const renderStars = (rating: number) => {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 >= 0.5;
@@ -108,14 +79,15 @@ const Topcategory: React.FC = () => {
           </div>
         </div>
 
-        {/* Divider Line */}
         <div className="divider h-[2px] mt-[30px] w-[90%] ml-[5%] rounded-[10px] bg-[#FFFFFF] shadow-lg" />
 
-        {/* Search Results */}
         <div className="result-total-box pt-[70px] pl-[160px] flex flex-wrap gap-x-[25px] gap-y-[50px] ">
           {results.map((result, index) => (
-            <div key={index} className="result-category cursor-pointer" >
-              <div className="result-box h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative overflow-hidden" onClick={() => navigate("/restaurantFoods")}>
+            <div key={result.id} className="result-category cursor-pointer">
+              <div
+                className="result-box h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative overflow-hidden"
+                onClick={() => navigate("/restaurantFoods")}
+              >
                 {(index + 1) % 2 === 0 && (
                   <div className="absolute h-[70px] w-[100px] top-[180px] text-[#fff] bg-[#D1A815] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
                     <div className="flex mt-[10px] ml-[10px]">
@@ -127,14 +99,14 @@ const Topcategory: React.FC = () => {
                   </div>
                 )}
                 <img
-                  src={result.img}
+                  src={`http://127.0.0.1:8000/${result.image}`}
                   className="h-full w-full object-cover"
-                  alt={result.name}
+                  alt={result.foodname}
                 />
               </div>
               <div className="ml-[10px]">
                 <p className="result-foodName font-bold text-[18px] pt-[15px]">
-                  {result.name} - {result.resName}
+                  {result.foodname}
                 </p>
                 <div className="result-location-box pt-[10px] w-full flex gap-[10px]">
                   <img
@@ -143,19 +115,17 @@ const Topcategory: React.FC = () => {
                     alt="Location Icon"
                   />
                   <p className="result-foodLocation font-bold text-[14px]">
-                    {result.Location}
                   </p>
                 </div>
-
-
-                {/* Rating */}
                 <div className="rating-box flex text-[#CA5F1A] text-[28px]">
-                  {renderStars(result.rating)}
+                  {/* {renderStars(result.rating)} */}
                   <span className="ml-[5px] text-[#473F40] pt-[15px] text-[14px]">
-                    ({result.rating})
+                    {/* ({result.rating}) */}
                   </span>
                 </div>
-                <button className="result-cartMbl text-center cursor-pointer w-[90px] h-[25px] rounded-[5px] mt-[-3px]">Add To Cart</button>
+                <button className="result-cartMbl text-center cursor-pointer w-[90px] h-[25px] rounded-[5px] mt-[-3px]">
+                  Add To Cart
+                </button>
               </div>
             </div>
           ))}
