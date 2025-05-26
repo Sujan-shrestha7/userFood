@@ -5,8 +5,7 @@ import location from "../images/location.png";
 import Footer from "../Footer";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import '../css/searchitem.css';
-
+import "../css/searchitem.css";
 
 interface Food {
   id: number;
@@ -16,6 +15,8 @@ interface Food {
   cat_name: string;
   discount: number;
   image?: string;
+  res_name:string;
+  res_address:string;
 }
 
 interface Category {
@@ -100,13 +101,13 @@ const Topcategory: React.FC = () => {
                 )}
                 <img
                   src={`http://127.0.0.1:8000/${result.image}`}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover font-bold"
                   alt={result.foodname}
                 />
               </div>
               <div className="ml-[10px]">
-                <p className="result-foodName font-bold text-[18px] pt-[15px]">
-                  {result.foodname}
+                <p className="result-foodName w-[310px] font-bold text-[18px] pt-[15px]">
+                  {result.foodname} - {result.res_name} (Rs. {result.fullprice})
                 </p>
                 <div className="result-location-box pt-[10px] w-full flex gap-[10px]">
                   <img
@@ -114,8 +115,7 @@ const Topcategory: React.FC = () => {
                     className="result-foodLocation h-[18px] w-[18px]"
                     alt="Location Icon"
                   />
-                  <p className="result-foodLocation font-bold text-[14px]">
-                  </p>
+                  <p className="result-foodLocation font-bold text-[14px]">{result.res_address}</p>
                 </div>
                 <div className="rating-box flex text-[#CA5F1A] text-[28px]">
                   {/* {renderStars(result.rating)} */}

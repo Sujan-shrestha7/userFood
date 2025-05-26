@@ -145,7 +145,7 @@ const SearchResults: React.FC = () => {
                   <p className="result-foodLocation font-bold text-[14px]">
                     {result.Location}
                   </p>
-                  <button className="result-cart text-center cursor-pointer w-[90px] h-[25px] rounded-[5px] mt-[-3px]">Add To Cart</button>
+                  {/* <button className="result-cart text-center cursor-pointer w-[90px] h-[25px] rounded-[5px] mt-[-3px]">Add To Cart</button> */}
                 </div>
 
 
