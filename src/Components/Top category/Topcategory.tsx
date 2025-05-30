@@ -92,9 +92,9 @@ const Topcategory: React.FC = () => {
                 {(index + 1) % 2 === 0 && (
                   <div className="absolute h-[70px] w-[100px] top-[180px] text-[#fff] bg-[#D1A815] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
                     <div className="flex mt-[10px] ml-[10px]">
-                      <p className="text-[36px] font-bold">15</p>
+                      <p className="text-[36px] font-bold">{Math.round(result.discount)}</p>
                       <p>
-                        % <span className="text-[18px]">Off</span>
+                        <span className="text-[18px]">Off</span>
                       </p>
                     </div>
                   </div>
@@ -106,8 +106,8 @@ const Topcategory: React.FC = () => {
                 />
               </div>
               <div className="ml-[10px]">
-                <p className="result-foodName w-[310px] font-bold text-[18px] pt-[15px]">
-                  {result.foodname} - {result.res_name} (Rs. {result.fullprice})
+                <p className="result-foodName w-[310px] font-bold text-[16px] pt-[15px]">
+                  {result.foodname} (Rs. {result.fullprice}) - {result.res_name} 
                 </p>
                 <div className="result-location-box pt-[10px] w-full flex gap-[10px]">
                   <img

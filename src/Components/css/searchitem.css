@@ -78,6 +78,11 @@
     .result-foodName{
         font-size: 18px;
     }
+    
+    .result-foodPrice{
+        font-family: 'Righteous', sans-serif;
+        font-size: 18px;
+    }
 
 @media (max-width: 768px) {
     .result-cartMbl {
@@ -136,16 +141,19 @@
     }
 
     .result-foodName,
-    .result-foodLocation {
+    .result-foodLocation,
+    .result-foodPrice {
         font-family: 'Righteous', sans-serif;
         font-size: 14px;
-        text-align: center;
         margin-top: -10px;
     }
     .result-foodName{
         font-size: 18px;
     }
-
+    .result-foodPrice{
+        font-family: 'Righteous', sans-serif;
+        font-size: 18px;
+    }
     .result-location-box {
         width: 100%;
         max-width: 148px;
