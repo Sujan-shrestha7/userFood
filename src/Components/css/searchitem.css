@@ -73,6 +73,7 @@
    .result-foodName,
     .result-foodLocation {
         font-family: 'Righteous', sans-serif;
+        font-weight: 500;
         font-size: 16px;
     }
     .result-foodName{
@@ -81,7 +82,7 @@
     
     .result-foodPrice{
         font-family: 'Righteous', sans-serif;
-        font-size: 18px;
+        font-size: 16px;
     }
 
 @media (max-width: 768px) {

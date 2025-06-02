@@ -182,7 +182,7 @@ const Home = () => {
             />
           </div>
           <div className="slidebar w-[1000px] overflow-x-auto">
-            <div className="ml-auto categories-list flex gap-[35px] justify-center">
+            <div className="ml-auto categories-list flex gap-[30px] justify-center">
               {categories.map((C) => (
                 <div
                 onClick={() => navigate(`/top-category?category=${C.cat_name}`)}

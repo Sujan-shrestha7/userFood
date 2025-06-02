@@ -35,7 +35,7 @@ const Topcategory: React.FC = () => {
   useEffect(() => {
     if (category) {
       axios
-        .get(`http://127.0.0.1:8000/food/foods/?category=${category}`)
+        .get(`http://localhost:8000/food/foods/?foodname=${category}`)
         .then((res) => setResults(res.data))
         .catch((err) => console.error("Error fetching foods:", err));
     }
@@ -82,15 +82,15 @@ const Topcategory: React.FC = () => {
 
         <div className="divider h-[2px] mt-[30px] w-[90%] ml-[5%] rounded-[10px] bg-[#FFFFFF] shadow-lg" />
 
-        <div className="result-total-box pt-[70px] pl-[160px] flex flex-wrap gap-x-[25px] gap-y-[50px] ">
+        <div className="result-total-box pt-[70px] pl-[160px] flex flex-wrap gap-x-[20px] gap-y-[50px] ">
           {results.map((result, index) => (
             <div key={result.id} className="result-category cursor-pointer">
               <div
-                className="result-box h-[250px] w-[280px] bg-[#000000] rounded-[30px] relative overflow-hidden"
+                className="result-box h-[220px] w-[250px] bg-[#000000] rounded-[30px] relative overflow-hidden"
                 onClick={() => navigate("/restaurantFoods")}
               >
                 {(index + 1) % 2 === 0 && (
-                  <div className="absolute h-[70px] w-[100px] top-[180px] text-[#fff] bg-[#D1A815] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
+                  <div className="absolute h-[70px] w-[100px] top-[155px] text-[#fff] bg-[#D1A815] text-[25px] font-bold px-3 py-1 rounded-tr-[30px]">
                     <div className="flex mt-[10px] ml-[10px]">
                       <p className="text-[36px] font-bold">{Math.round(result.discount)}</p>
                       <p>
@@ -106,7 +106,7 @@ const Topcategory: React.FC = () => {
                 />
               </div>
               <div className="ml-[10px]">
-                <p className="result-foodName w-[310px] font-bold text-[16px] pt-[15px]">
+                <p className="result-foodName w-[250px] text-[14px] pt-[15px]">
                   {result.foodname} (Rs. {result.fullprice}) - {result.res_name} 
                 </p>
                 <div className="result-location-box pt-[10px] w-full flex gap-[10px]">
@@ -115,7 +115,7 @@ const Topcategory: React.FC = () => {
                     className="result-foodLocation h-[18px] w-[18px]"
                     alt="Location Icon"
                   />
-                  <p className="result-foodLocation font-bold text-[14px]">{result.res_address}</p>
+                  <p className="result-foodLocation font-bold text-[12px]">{result.res_address}</p>
                 </div>
                 <div className="rating-box flex text-[#CA5F1A] text-[28px]">
                   {/* {renderStars(result.rating)} */}
