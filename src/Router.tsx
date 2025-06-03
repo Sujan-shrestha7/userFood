@@ -12,6 +12,7 @@ import Footer from "./Components/Footer";
 import LoginForm from "./Components/dashboard/loginForm";
 import Registerform from "./Components/dashboard/Registerform";
 import Topcategory from "./Components/Top category/Topcategory";
+import RegisterRestaurant from "./Components/dashboard/RegisterRestaurant";
 
 const Router: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const Router: React.FC = () => {
           <Route path="login/" element={<LoginForm />} />
           <Route path="/register" element={<Registerform />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/register_restaurant" element={<RegisterRestaurant/>} />
           <Route path="/top-category" element={<Topcategory />} />
           <Route path="result/" element={<SearchResults />} />
           <Route path="home/result/" element={<SearchResults />} />

@@ -464,7 +464,7 @@ const Home = () => {
           boosting your reach and
           <br /> growing your business !!"
         </p>
-        <button className="w-[180px] h-[40px] cursor-pointer text-[18px] text-[#fff] bg-[#FFC625] font-[Righteous-Regular, sans-serif] flex items-center justify-center mt-[50px] ml-[35%] rounded-[8px] border-none shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_1px_10px_rgba(0,0,0,0.04)]">
+        <button onClick={()=> navigate("/register_restaurant")} className="w-[180px] h-[40px] cursor-pointer text-[18px] text-[#fff] bg-[#FFC625] font-[Righteous-Regular, sans-serif] flex items-center justify-center mt-[50px] ml-[35%] rounded-[8px] border-none shadow-[0px_4px_6px_-1px_rgba(0,0,0,0.1),0px_1px_10px_rgba(0,0,0,0.04)]">
           Register Now
           <img src={icon} className="h-[13px] w-[13px] pl-[5px]" alt="icon" />
         </button>
