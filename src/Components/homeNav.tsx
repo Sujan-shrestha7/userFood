@@ -39,7 +39,7 @@ navigate("/")
         </div>
 
         <div className="icon-button flex w-[430px] gap-[40px] items-center justify-center">
-          <button className="AddRes h-[40px] w-[150px] text-[#473F40] text-[16px] font-bold bg-[#FFFFFF] border-none cursor-pointer">
+          <button onClick={()=>navigate("/register_restaurant")} className="AddRes h-[40px] w-[150px] text-[#473F40] text-[16px] font-bold bg-[#FFFFFF] border-none cursor-pointer">
             Add Restaurant
           </button>
 
