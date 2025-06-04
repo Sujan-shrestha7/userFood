@@ -16,12 +16,28 @@ const RegisterRestaurant: React.FC = () => {
         </div>
         <div className="w-full my-[30px]">
           <p className="text-center text-[24px] font-bold">Registration Form</p>
-          <div className="m-[30px] mx-[30px]">
+          <div className="m-[30px] flex flex-col gap-y-[30px] mx-[30px]">
             <div className="flex flex-col gap-y-[10px]">
               <label className="font-bold text-[14px]">Full Name</label>
               <input
                 type="text"
                 placeholder="Name"
+                className="w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
+              />
+            </div>
+            <div className="flex flex-col gap-y-[10px]">
+              <label className="font-bold text-[14px]">Address</label>
+              <input
+                type="text"
+                placeholder="Restaurant Owner Address"
+                className="w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
+              />
+            </div>
+            <div className="flex flex-col gap-y-[10px]">
+              <label className="font-bold text-[14px]">Location</label>
+              <input
+                type="text"
+                placeholder="Restaurant Location"
                 className="w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
               />
             </div>
