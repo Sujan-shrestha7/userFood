@@ -22,15 +22,7 @@ const RegisterRestaurant: React.FC = () => {
               <input
                 type="text"
                 placeholder="Name"
-                className="w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
-              />
-            </div>
-            <div className="flex flex-col gap-y-[10px]">
-              <label className="font-bold text-[14px]">Address</label>
-              <input
-                type="text"
-                placeholder="Restaurant Owner Address"
-                className="w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
+                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
               />
             </div>
             <div className="flex flex-col gap-y-[10px]">
@@ -38,7 +30,31 @@ const RegisterRestaurant: React.FC = () => {
               <input
                 type="text"
                 placeholder="Restaurant Location"
-                className="w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
+                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
+              />
+            </div>
+            <div className="flex flex-col gap-y-[10px]">
+              <label className="font-bold text-[14px]">Address</label>
+              <input
+                type="text"
+                placeholder="Restaurant Owner Address"
+                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
+              />
+            </div>
+            <div className="flex flex-col gap-y-[10px]">
+              <label className="font-bold text-[14px]">Restaurant Email</label>
+              <input
+                type="text"
+                placeholder="Restaurant Email"
+                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
+              />
+            </div>
+            <div className="flex flex-col gap-y-[10px]">
+              <label className="font-bold text-[14px]">Email</label>
+              <input
+                type="text"
+                placeholder="Restaurant Owner Email"
+                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
               />
             </div>
           </div>
