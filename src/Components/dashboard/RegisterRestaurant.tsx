@@ -10,7 +10,7 @@ const RegisterRestaurant: React.FC = () => {
         <div>
           <img
             src={woodart}
-            className="relative w-[825px] h-auto rounded-tl-[20px] rounded-bl-[20px] z-10 opacity-80"
+            className="relative w-[825px] h-auto rounded-tl-[20px] rounded-bl-[20px] z-10 opacity-90"
             alt="Wood Art"
           />
         </div>
@@ -54,6 +54,14 @@ const RegisterRestaurant: React.FC = () => {
               <input
                 type="text"
                 placeholder="Restaurant Owner Email"
+                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
+              />
+            </div>
+            <div className="flex flex-col gap-y-[10px]">
+              <label className="font-bold text-[14px]">Contact</label>
+              <input
+                type="text"
+                placeholder="Restaurant Owner Contact"
                 className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
               />
             </div>
