@@ -7,12 +7,15 @@ const RegisterRestaurant: React.FC = () => {
     <div>
       <HomeNav />
       <div className="bg-[#fff] m-[35px] mx-[50px] rounded-[20px] flex">
-        <div>
+        <div className="w-[825px]">
           <img
             src={woodart}
-            className="relative w-[825px] h-auto rounded-tl-[20px] rounded-bl-[20px] z-10 opacity-90"
+            className="w-full h-auto rounded-tl-[20px] rounded-bl-[20px] opacity-90"
             alt="Wood Art"
           />
+            <p className="w-[500px] absolute top-1/2 font-bold text-[28px] px-[30px] text-black text-center">
+              Connect with the 100000+ plus customers with us
+            </p>
         </div>
         <div className="w-full my-[30px]">
           <p className="text-center text-[24px] font-bold">Registration Form</p>
