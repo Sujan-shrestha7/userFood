@@ -68,6 +68,30 @@ const RegisterRestaurant: React.FC = () => {
                 className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
               />
             </div>
+            <div className="flex flex-col gap-y-[10px]">
+              <label className="font-bold text-[14px]">Pan No</label>
+              <input
+                type="text"
+                placeholder="Register Pan Number"
+                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
+              />
+            </div>
+            <div className="flex flex-col gap-y-[10px]">
+              <label className="font-bold text-[14px]">Owner's Citizenship No</label>
+              <input
+                type="text"
+                placeholder="Owner's Citizenship No"
+                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
+              />
+            </div>
+            <div className="flex gap-[10px]">
+              <label className="font-bold text-[14px]">Photo: </label>
+              <input
+                type="file"
+                placeholder="Restaurant Photo"
+                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
+              />
+            </div>
           </div>
         </div>
       </div>

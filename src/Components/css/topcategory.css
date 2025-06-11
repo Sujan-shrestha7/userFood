@@ -1,0 +1,98 @@
+  .result-foodName,
+    .result-foodLocation {
+        font-family: 'Righteous', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    .result-foodName{
+        font-size: 18px;
+    }
+    .result-foodPrice{
+        font-family: 'Righteous', sans-serif;
+        font-size: 16px;
+    }
+
+@media (max-width: 768px) {
+    .result-cartMbl {
+        display: block;
+        width: 90px;
+        margin: 5px 20px 0 0;
+    }
+
+    .search-result-box {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        margin-top: -30px;
+        gap: 30px;
+
+    }
+
+    .search-text {
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+
+    .searchBox {
+        width: 150px;
+
+    }
+
+    .searchButton {
+        width: 70px;
+        margin-right: 10px;
+    }
+
+    .divider {
+        position: relative;
+        width: 90%;
+        height: 1px;
+    }
+
+    .result-total-box {
+        margin: 35px 10px;
+        padding: 0;
+    }
+
+    .result-category {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: -15px;
+    }
+
+    .result-box {
+        max-width: 120px;
+        height: 110px;
+    }
+
+    .result-foodName,
+    .result-foodLocation,
+    .result-foodPrice {
+        font-family: 'Righteous', sans-serif;
+        font-size: 14px;
+        margin-top: -10px;
+    }
+    .result-foodName{
+        font-size: 18px;
+    }
+    .result-foodPrice{
+        font-family: 'Righteous', sans-serif;
+        font-size: 18px;
+    }
+    .result-location-box {
+        width: 100%;
+        max-width: 148px;
+        gap: 3px;
+    }
+
+    .result-cart {
+        display: none;
+    }
+
+    .rating-box {
+        font-size: 1.4rem;
+    }
+}

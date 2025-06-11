@@ -5,7 +5,7 @@ import location from "../images/location.png";
 import Footer from "../Footer";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import "../css/searchitem.css";
+import '../css/topcategory.css';
 
 interface Food {
   id: number;
