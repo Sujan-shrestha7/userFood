@@ -10,7 +10,7 @@ const RegisterRestaurant: React.FC = () => {
         <div className="w-[825px]">
           <img
             src={woodart}
-            className="w-full h-auto rounded-tl-[20px] rounded-bl-[20px] opacity-90"
+            className="w-full h-screen rounded-tl-[20px] rounded-bl-[20px] opacity-90"
             alt="Wood Art"
           />
             <p className="w-[500px] absolute top-1/2 font-bold text-[28px] px-[30px] text-black text-center">
@@ -27,28 +27,27 @@ const RegisterRestaurant: React.FC = () => {
                 placeholder="Name"
                 className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
               />
+            </div><div className="flex flex-col gap-y-[10px]">
+              <label className="font-bold text-[14px]">Restaurant Name</label>
+              <input
+                type="text"
+                placeholder="Restaurant Name"
+                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
+              />
             </div>
             <div className="flex flex-col gap-y-[10px]">
               <label className="font-bold text-[14px]">Location</label>
               <input
                 type="text"
-                placeholder="Restaurant Location"
+                placeholder="Reataurant Location"
                 className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
               />
             </div>
             <div className="flex flex-col gap-y-[10px]">
-              <label className="font-bold text-[14px]">Address</label>
+              <label className="font-bold text-[14px]">Contact No</label>
               <input
                 type="text"
-                placeholder="Restaurant Owner Address"
-                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
-              />
-            </div>
-            <div className="flex flex-col gap-y-[10px]">
-              <label className="font-bold text-[14px]">Restaurant Email</label>
-              <input
-                type="text"
-                placeholder="Restaurant Email"
+                placeholder="Contact"
                 className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
               />
             </div>
@@ -56,31 +55,7 @@ const RegisterRestaurant: React.FC = () => {
               <label className="font-bold text-[14px]">Email</label>
               <input
                 type="text"
-                placeholder="Restaurant Owner Email"
-                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
-              />
-            </div>
-            <div className="flex flex-col gap-y-[10px]">
-              <label className="font-bold text-[14px]">Contact</label>
-              <input
-                type="text"
-                placeholder="Restaurant Owner Contact"
-                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
-              />
-            </div>
-            <div className="flex flex-col gap-y-[10px]">
-              <label className="font-bold text-[14px]">Pan No</label>
-              <input
-                type="text"
-                placeholder="Register Pan Number"
-                className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
-              />
-            </div>
-            <div className="flex flex-col gap-y-[10px]">
-              <label className="font-bold text-[14px]">Owner's Citizenship No</label>
-              <input
-                type="text"
-                placeholder="Owner's Citizenship No"
+                placeholder="Owner Email"
                 className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
               />
             </div>
@@ -91,6 +66,9 @@ const RegisterRestaurant: React.FC = () => {
                 placeholder="Restaurant Photo"
                 className="font-bold w-full h-[35px] border-0 border-b-2 border-black outline-none py-2 px-1 placeholder-black-500 placeholder:text-[18px] placeholder:text-gray placeholder:font-bold"
               />
+            </div>
+            <div className="flex items-center justify-center gap-[10px]">
+              <button className="h-[35px] w-[130px] rounded-[5px] cursor-pointer">Submit</button>
             </div>
           </div>
         </div>
