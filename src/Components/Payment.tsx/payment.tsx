@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import HomeNav from "../homeNav";
 import resimg from "../images/vip.png"; // Ensure correct path
 import Footer from "../Footer";
 import "../css/payment.css";
 
 const Payment = () => {
-  const [deliveryOption, setDeliveryOption] = useState("now");
   const [paymentMethod, setPaymentMethod] = useState("");
 
   const myCart = [

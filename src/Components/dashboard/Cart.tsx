@@ -9,14 +9,12 @@ import '../css/cart.css';
 
 
 const Cart:React.FC = () => {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const navigate =useNavigate();
 
-  const toggleExpand = (index) => {
-    setExpandedIndex(expandedIndex === index? null : index);
-    
-  };
-  
+  const toggleExpand = (index: number) => {
+  setExpandedIndex(expandedIndex === index ? null : index);
+};
   const details = [
     {
       img: resimg,
