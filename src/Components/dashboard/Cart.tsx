@@ -15,6 +15,7 @@ const Cart:React.FC = () => {
   const toggleExpand = (index: number) => {
   setExpandedIndex(expandedIndex === index ? null : index);
 };
+console.log("test");
   const details = [
     {
       img: resimg,
