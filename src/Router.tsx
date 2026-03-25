@@ -15,6 +15,7 @@ import Topcategory from "./Components/Top category/Topcategory";
 import RegisterRestaurant from "./Components/dashboard/RegisterRestaurant";
 
 const Router: React.FC = () => {
+  console.log("test");
   return (
     <div>
       <BrowserRouter>
