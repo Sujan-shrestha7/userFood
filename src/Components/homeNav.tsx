@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import logo from "../../../logo.png";
 import logo from "./images/logo.png";
 import cart from "./images/cart.png";
 import notification from "./images/notification.png";
